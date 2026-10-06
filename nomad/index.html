@@ -642,6 +642,13 @@
   .wbar i:nth-child(2) { flex: 20; opacity: 1; }
   .wbar i:nth-child(3) { flex: 20; opacity: 0.7; }
   .wbar i:nth-child(4) { flex: 10; opacity: 0.3; }
+
+/* 이런 분께 맞아요: 2x2 → 한 줄씩 (1열 4행) 강조 */
+.fit-grid { grid-template-columns: 1fr; gap: 10px; grid-auto-rows: auto; }
+.fit-card { padding: 20px 24px 21px; }
+.fit-card b { font-size: clamp(15.5px, 3.2vw, 17.5px); line-height: 24px; }
+.fit-card span { margin-top: 5px; font-size: clamp(14.5px, 2.9vw, 16px); line-height: 23px; }
+@media (max-width: 560px) { .fit-grid { gap: 8px; } .fit-card { padding: 17px 18px 18px; } }
 </style>
 </head>
 <body>
