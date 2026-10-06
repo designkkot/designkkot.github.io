@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>꽃디 | 한국 떠난 16년 차 디자이너의 커리어 컨설팅</title>
+<meta name="description" content="회사원에서 프리랜서, 디지털노마드까지. 16년 차 디자이너 꽃디가 직접 해보며 찾은 방법을 6주 1:1, 6주 그룹, 60분 1회 컨설팅으로 나눠요.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+  :root {
+    --ink: #11131b;
+    --ink-2: #1f2329;
+    --dark: #0f1117;
+    --dark-2: #171a22;
+    --gray: #6b7080;
+    --gray-3: #8b90a0;
+    --line: #e4e6ee;
+    --mint: #75f3e6;
+    --lav: #a78bfa;
+    --blue: #304bff;
+    --coral: #f2737a;
+    --grad: linear-gradient(90deg, #75f3e6 0%, #a78bfa 100%);
+    --grad-d: linear-gradient(90deg, #12b5a4 0%, #7c5cf0 100%);
+    --c-1on1: #75f3e6;
+    --c-group: #ffd84d;
+    --c-nomad: #ffb8dd;
+    --W: 640px;
+    --P: 32px;
+    --serif: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    color: var(--ink); background: #fff; line-height: 1.45; letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: break-word;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .in { max-width: var(--W); margin: 0 auto; padding: 0 var(--P); }
+  .c { text-align: center; }
+  .serif { font-family: var(--serif); font-weight: 500; letter-spacing: -0.04em; }
+  .gtext { background: var(--grad-d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ghl { background: linear-gradient(90deg, rgba(117,243,230,.85), rgba(167,139,250,.75)) 0 88% / 100% 38% no-repeat; padding: 0 2px; }
+  .mhl { background: #c9faf5; padding: 0 1px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 16px; border-radius: 18px; background: var(--ink); color: #fff; font-size: 13.5px; font-weight: 800; letter-spacing: 0.01em; }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--grad); }
+  .sec { padding: 96px 0; }
+  .sec-pre { margin-top: 26px; font-size: clamp(21px, 4.4vw, 28px); line-height: 1.55; color: var(--ink-2); }
+  .sec-h { margin-top: 10px; font-size: clamp(34px, 8vw, 50px); line-height: 1.24; font-weight: 900; letter-spacing: -0.06em; }
+  .body-t { font-size: clamp(16px, 3.3vw, 19px); line-height: 1.8; color: #4b5060; letter-spacing: -0.04em; }
+  .body-t b { color: var(--ink); font-weight: 800; }
+
+  /* ---------- 상단 띠 · 헤더 ---------- */
+  .topbar { background: var(--ink); }
+  .topbar a { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 12px 16px; font-size: 14px; font-weight: 700; color: #fff; letter-spacing: -0.03em; }
+  .topbar b { font-weight: 800; color: var(--c-group); }
+  .topbar span { opacity: .55; }
+  .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.88); backdrop-filter: blur(10px); border-bottom: 1px solid #eef0f4; }
+  .site-header .in { max-width: 1040px; height: 72px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-size: 30px; font-weight: 900; letter-spacing: -0.06em; }
+  .nav { display: flex; align-items: center; gap: 26px; font-size: 15.5px; font-weight: 700; color: #4b5060; }
+  .nav a:hover { color: var(--ink); }
+  .nav .go { height: 40px; padding: 0 18px; border-radius: 20px; background: var(--ink); color: #fff; display: inline-flex; align-items: center; }
+
+  /* ---------- 히어로 ---------- */
+  .hero { position: relative; overflow: hidden; padding: 72px 0 84px; text-align: center;
+    background:
+      radial-gradient(520px 380px at 12% 8%, rgba(117,243,230,.38), transparent 70%),
+      radial-gradient(560px 420px at 92% 30%, rgba(167,139,250,.30), transparent 70%),
+      #fff; }
+  .hero .tagp { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 20px; background: #fff; border: 1.5px solid var(--line); font-size: 14.5px; font-weight: 700; color: #4b5060; box-shadow: 0 6px 20px rgba(17,19,27,.05); }
+  .hero .tagp b { color: var(--ink); font-weight: 800; }
+  .hero-pre { margin-top: 34px; font-size: clamp(20px, 4.4vw, 28px); color: #3b3f4c; }
+  .hero-h { margin-top: 12px; font-size: clamp(44px, 11vw, 74px); line-height: 1.16; font-weight: 900; letter-spacing: -0.065em; }
+  .hero-sub { margin-top: 22px; font-size: clamp(17px, 3.6vw, 21px); line-height: 1.6; color: #4b5060; letter-spacing: -0.04em; }
+  .hero-sub b { color: var(--ink); font-weight: 800; }
+  .hero-photo { position: relative; margin: 46px auto 0; max-width: 560px; }
+  .hero-photo .ph { border-radius: 32px; overflow: hidden; aspect-ratio: 4 / 3.3; box-shadow: 0 30px 70px rgba(48, 40, 120, .18); }
+  .hero-photo .ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+  .stk { position: absolute; z-index: 2; display: inline-flex; align-items: center; gap: 7px; padding: 10px 16px; border-radius: 14px; background: #fff; font-size: 14.5px; font-weight: 800; letter-spacing: -0.03em; box-shadow: 0 12px 30px rgba(17,19,27,.12); white-space: nowrap; }
+  .stk i { width: 8px; height: 8px; border-radius: 50%; }
+  .stk.s1 { top: 26px; left: -26px; transform: rotate(-5deg); }
+  .stk.s1 i { background: var(--mint); }
+  .stk.s2 { top: 44%; right: -34px; transform: rotate(4deg); background: var(--ink); color: #fff; }
+  .stk.s2 i { background: var(--lav); }
+  .stk.s3 { bottom: 26px; left: -14px; transform: rotate(-2deg); }
+  .stk.s3 i { background: var(--coral); }
+  .hero-cta { margin: 46px auto 0; max-width: 460px; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 14px; width: 100%; height: 72px; border-radius: 36px; font-size: clamp(18px, 3.8vw, 21px); font-weight: 800; letter-spacing: -0.04em; transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn svg { width: 15px; height: 15px; flex: none; }
+  .btn-ink { background: var(--ink); color: #fff; box-shadow: 0 14px 30px rgba(17,19,27,.18); }
+  .btn-white { background: #fff; color: var(--ink); }
+  .svc-pills { margin-top: 14px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+  .svc-pills a { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px; border-radius: 19px; background: #fff; border: 1.5px solid var(--line); font-size: 14px; font-weight: 700; color: #3b3f4c; }
+  .svc-pills a:hover { border-color: var(--ink); }
+  .svc-pills i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+
+  /* ---------- 숫자 마퀴 ---------- */
+  .marquee { background: var(--grad); overflow: hidden; padding: 20px 0; }
+  .marquee .track { display: flex; width: max-content; animation: mq 34s linear infinite; }
+  .marquee .item { display: inline-flex; align-items: baseline; gap: 10px; padding: 0 30px; white-space: nowrap; font-size: 20px; font-weight: 700; letter-spacing: -0.04em; color: var(--ink); }
+  .marquee .item b { font-size: 26px; font-weight: 900; letter-spacing: -0.05em; }
+  .marquee .star { font-size: 16px; opacity: .55; }
+  @keyframes mq { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee .track { animation: none; } }
+
+  /* ---------- STORY 01: 원형 3개 ---------- */
+  .story1 { background: #fff; }
+  .bubbles3 { position: relative; height: 470px; margin: 50px auto 0; max-width: 560px; }
+  .bub { position: absolute; width: 236px; height: 236px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .bub span { font-size: 22px; line-height: 1.3; font-weight: 500; letter-spacing: -0.04em; color: #e6e7ea; }
+  .bub b { margin-top: 6px; font-size: 32px; line-height: 1.2; font-weight: 900; letter-spacing: -0.05em; }
+  .bub.t { left: 50%; top: 0; transform: translateX(-50%); }
+  .bub.l { left: 0; top: 196px; }
+  .bub.r { right: 0; top: 196px; }
+  .bub.r b { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .night { position: relative; margin: -40px auto 0; width: 260px; height: 260px; border-radius: 50%; overflow: hidden; border: 8px solid #fff; box-shadow: 0 18px 40px rgba(17,19,27,.18); }
+  .night img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .big-q { margin-top: 46px; font-size: clamp(30px, 7vw, 46px); line-height: 1.3; font-weight: 900; letter-spacing: -0.06em; }
+  .story1 .body-t { margin-top: 28px; }
+
+  /* ---------- STORY 02: 말풍선 다크 패널 ---------- */
+  .story2 { padding-top: 0; }
+  .panel { background: var(--dark); border-radius: 36px; padding: 64px 36px 0; overflow: hidden; text-align: center; }
+  .panel .chip { background: #fff; color: var(--ink); }
+  .panel-h { margin-top: 24px; font-size: clamp(26px, 5.6vw, 36px); line-height: 1.35; font-weight: 800; letter-spacing: -0.055em; color: #fff; }
+  .panel-h .serif { font-weight: 500; color: #c9ccd3; }
+  .sp { position: relative; display: inline-block; margin-top: 40px; padding: 24px 34px; border-radius: 30px; background: #fff; font-size: clamp(19px, 4.3vw, 27px); line-height: 1.45; font-weight: 600; letter-spacing: -0.05em; color: var(--ink); }
+  .sp b { font-weight: 900; }
+  .sp em { font-style: normal; font-weight: 900; color: var(--coral); }
+  .sp::after { content: ''; position: absolute; bottom: -16px; left: 50%; margin-left: -14px; border: 14px solid transparent; border-top: 16px solid #fff; border-bottom: 0; }
+  .sp.s2 { margin-top: 32px; }
+  .sp.s2::after { left: 38%; }
+  .panel-photo { margin: 52px auto 0; width: 78%; max-width: 420px; aspect-ratio: 1 / 0.9; border-radius: 30px 30px 0 0; overflow: hidden; }
+  .panel-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .turn { margin-top: 56px; text-align: center; }
+  .turn-steps { list-style: none; margin: 34px auto 0; max-width: 470px; }
+  .turn-steps li { position: relative; padding: 22px 26px; border-radius: 22px; background: #f5f6fa; font-size: clamp(16.5px, 3.5vw, 20px); line-height: 1.5; font-weight: 600; letter-spacing: -0.05em; color: #3b3f4c; }
+  .turn-steps li b { font-weight: 900; color: var(--ink); }
+  .turn-steps li + li { margin-top: 36px; }
+  .turn-steps li + li::before { content: ''; position: absolute; top: -27px; left: 50%; margin-left: -7px; width: 14px; height: 14px; border-right: 3px solid #c3c7d3; border-bottom: 3px solid #c3c7d3; transform: rotate(45deg); }
+  .turn-steps li.on { background: var(--grad); color: var(--ink); }
+  .turn-end { margin-top: 44px; font-size: clamp(22px, 4.8vw, 30px); line-height: 1.55; }
+  .turn-end b { font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.06em; }
+
+  /* ---------- WHY: 삼각형 + 이력 ---------- */
+  .why { overflow: hidden; background: linear-gradient(180deg, #fff 0%, #f6f4ff 100%); }
+  .tri { display: block; width: 100%; max-width: 520px; margin: 40px auto 0; }
+  .tri text { font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -1px; }
+  .why-line { margin-top: 30px; font-size: clamp(22px, 4.8vw, 32px); line-height: 1.4; font-weight: 500; letter-spacing: -0.05em; }
+  .why-line b { font-weight: 900; }
+  .why-big { position: relative; isolation: isolate; display: inline-block; margin-top: 10px; font-size: clamp(40px, 9.6vw, 64px); line-height: 1.15; font-weight: 900; letter-spacing: -0.065em; }
+  .why-big .brush { position: absolute; left: -2%; right: -2%; bottom: -14px; height: 16px; z-index: -1; }
+  .why-big .txt { position: relative; }
+  .cred { margin-top: 64px; text-align: left; background: #f3efff; border: 1.5px solid #e4dbff; border-radius: 28px; padding: 30px 32px; }
+  .cred li, .cred2 li { list-style: none; position: relative; padding-left: 26px; font-size: clamp(16.5px, 3.5vw, 21px); line-height: 1.5; letter-spacing: -0.05em; color: #2a2e3a; }
+  .cred li + li, .cred2 li + li { margin-top: 18px; }
+  .cred li::before, .cred2 li::before { content: ''; position: absolute; left: 2px; top: .55em; width: 10px; height: 10px; border-radius: 50%; background: #c9b8ff; }
+  .cred b, .cred2 b { font-weight: 900; color: var(--ink); }
+  .cred2 { margin-top: 30px; padding: 0 32px; text-align: left; }
+  .why-photo { position: relative; margin-top: 54px; border-radius: 30px; overflow: hidden; aspect-ratio: 16 / 10; }
+  .why-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .countries { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 18px; background: linear-gradient(180deg, transparent, rgba(15,17,23,.82)); color: #fff; font-size: 13px; font-weight: 800; letter-spacing: 0.22em; text-align: center; line-height: 1.9; }
+
+  /* ---------- 원칙: 다크 글래스 ---------- */
+  .dark { background: var(--dark); color: #fff; }
+  .dark .sec-pre { color: #c9ccd3; }
+  .dark .chip { background: #fff; color: var(--ink); }
+  .glass { margin-top: 50px; display: grid; gap: 14px; text-align: left; }
+  .gl { display: flex; align-items: center; gap: 22px; padding: 26px 28px; border-radius: 26px; border: 1.5px solid rgba(255,255,255,.22); background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.02)); }
+  .gl .n { flex: none; width: 66px; height: 66px; border-radius: 18px; background: var(--grad); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; letter-spacing: -0.03em; }
+  .gl h3 { font-size: clamp(19px, 4vw, 24px); line-height: 1.35; font-weight: 800; letter-spacing: -0.05em; }
+  .gl p { margin-top: 5px; font-size: clamp(14.5px, 3vw, 16.5px); line-height: 1.55; color: #a9aeb9; letter-spacing: -0.04em; }
+  .dark-note { margin-top: 40px; font-size: clamp(17px, 3.6vw, 21px); line-height: 1.6; color: #c9ccd3; letter-spacing: -0.04em; }
+  .dark-note b { color: #fff; font-weight: 800; }
+
+  /* ---------- 후기 월 ---------- */
+  .rv-band { background: var(--grad); padding: 64px 0 60px; text-align: center; }
+  .rv-band h2 { font-size: clamp(44px, 10.5vw, 76px); line-height: 1.1; font-weight: 900; letter-spacing: -0.065em; }
+  .rv-band p { margin-top: 14px; font-size: clamp(16px, 3.4vw, 19px); font-weight: 700; color: #2a2e3a; }
+  .wall { position: relative; overflow: hidden; background: #9a9ca4; padding: 70px 0 80px; }
+  .wall-bg { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; padding: 18px 26px; font-size: 14px; line-height: 1.75; color: rgba(17,19,27,.55); letter-spacing: -0.04em; pointer-events: none; user-select: none; }
+  .wall-bg p + p { margin-top: 18px; }
+  .wall-bg b { display: block; font-weight: 800; }
+  .rv-cards { position: relative; display: grid; gap: 26px; }
+  .rv { background: #fff; border-radius: 32px; padding: 40px 38px 34px; text-align: center; box-shadow: 0 20px 50px rgba(17,19,27,.18); }
+  .rv .q { font-family: var(--serif); font-size: 64px; line-height: 40px; font-weight: 700; background: var(--grad-d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .rv blockquote { margin-top: 10px; font-size: clamp(20px, 4.4vw, 27px); line-height: 1.6; font-weight: 600; letter-spacing: -0.055em; color: var(--ink); }
+  .rv blockquote b { font-weight: 900; }
+  .rv small { display: block; margin-top: 18px; font-size: 14.5px; font-weight: 700; color: var(--gray-3); letter-spacing: -0.03em; }
+  .wall-note { position: relative; display: table; margin: 26px auto 0; padding: 9px 16px; border-radius: 20px; background: rgba(17,19,27,.78); text-align: center; font-size: 14px; color: #fff; letter-spacing: -0.03em; }
+
+  /* ---------- 서비스 패키지 ---------- */
+  .svcs { background: #f7f6fc; }
+  .guide { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .guide div { background: #fff; border: 1.5px solid var(--line); border-radius: 20px; padding: 18px 20px; text-align: left; }
+  .guide b { display: block; font-size: 16.5px; font-weight: 900; letter-spacing: -0.05em; }
+  .guide span { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 14.5px; color: #4b5060; letter-spacing: -0.04em; }
+  .guide i { width: 9px; height: 9px; border-radius: 50%; }
+  .pkgs { margin-top: 70px; display: grid; gap: 66px; }
+  .pkg { position: relative; display: block; border-radius: 34px; padding: 62px 34px 32px; text-align: left;
+    border: 3px solid transparent;
+    background: linear-gradient(180deg, #fff, #fbfaff) padding-box, linear-gradient(135deg, var(--c) 0%, var(--c2, #a78bfa) 100%) border-box;
+    box-shadow: 0 18px 44px rgba(48,40,120,.08); transition: transform .15s ease, box-shadow .15s ease; }
+  .pkg:hover { transform: translateY(-4px); box-shadow: 0 26px 56px rgba(48,40,120,.14); }
+  .pkg-no { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 80px; height: 80px; border-radius: 50%; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 900; letter-spacing: -0.04em; border: 5px solid #f7f6fc; }
+  .pkg-for { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 800; letter-spacing: 0.1em; color: #4b5060; }
+  .pkg-for i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px rgba(0,0,0,.04); }
+  .pkg-head { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+  .pkg h3 { font-size: clamp(30px, 6.8vw, 44px); line-height: 1.15; font-weight: 900; letter-spacing: -0.06em; }
+  .pkg-price { flex: none; display: inline-flex; flex-direction: column; align-items: flex-end; padding: 10px 18px; border-radius: 18px; background: linear-gradient(135deg, var(--c), var(--c2, #a78bfa)); }
+  .pkg-price s { font-size: 12.5px; font-weight: 700; color: rgba(17,19,27,.55); }
+  .pkg-price strong { font-size: clamp(22px, 4.6vw, 28px); line-height: 1.15; font-weight: 900; letter-spacing: -0.05em; }
+  .pkg-price small { font-size: 12px; font-weight: 800; color: rgba(17,19,27,.7); }
+  .pkg-pitch { margin-top: 14px; font-size: clamp(16.5px, 3.5vw, 20px); line-height: 1.55; color: #3b3f4c; letter-spacing: -0.05em; }
+  .pkg-bar { margin-top: 22px; padding: 15px 18px; border-radius: 14px; background: var(--ink); color: #fff; text-align: center; font-size: clamp(15px, 3.2vw, 18.5px); font-weight: 500; letter-spacing: -0.04em; }
+  .pkg-bar b { font-weight: 900; }
+  .pkg ul { list-style: none; margin-top: 24px; padding-top: 22px; border-top: 1.5px solid var(--line); }
+  .pkg li { position: relative; padding-left: 18px; font-size: clamp(15px, 3.1vw, 17.5px); line-height: 1.55; color: #3b3f4c; letter-spacing: -0.045em; }
+  .pkg li + li { margin-top: 10px; }
+  .pkg li::before { content: ''; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+  .pkg li b { font-weight: 800; color: var(--ink); }
+  .pkg-go { margin-top: 26px; display: flex; align-items: center; justify-content: center; gap: 10px; height: 60px; border-radius: 30px; border: 2px solid var(--ink); font-size: 17px; font-weight: 800; letter-spacing: -0.04em; transition: background .15s ease, color .15s ease; }
+  .pkg:hover .pkg-go { background: var(--ink); color: #fff; }
+  .pkg-go svg { width: 13px; height: 13px; }
+  .stamp { position: absolute; top: -46px; right: -14px; width: 118px; height: 118px; border-radius: 50%; border: 3px solid var(--coral); color: var(--coral); background: rgba(255,255,255,.9); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(12deg); font-weight: 900; text-align: center; }
+  .stamp::before { content: ''; position: absolute; inset: 5px; border-radius: 50%; border: 1.5px dashed var(--coral); }
+  .stamp span { font-size: 13px; letter-spacing: 0.08em; }
+  .stamp b { font-size: 25px; line-height: 1.1; letter-spacing: -0.04em; }
+  .stamp small { font-size: 11.5px; font-weight: 800; letter-spacing: 0.02em; }
+  .neon { position: relative; margin-top: 70px; border-radius: 30px; padding: 46px 30px 36px; text-align: center; background: #1b1e2b; border: 2px solid #5b6cff; box-shadow: 0 0 0 6px rgba(91,108,255,.12), 0 0 40px rgba(91,108,255,.35), inset 0 0 30px rgba(91,108,255,.18); }
+  .neon .new { position: absolute; top: -26px; right: 24px; transform: rotate(-10deg); font-size: 46px; font-weight: 900; font-style: italic; letter-spacing: -0.04em; color: var(--mint); text-shadow: 0 0 18px rgba(117,243,230,.55); }
+  .neon .pill { display: inline-flex; height: 40px; align-items: center; padding: 0 20px; border-radius: 20px; background: #fff; color: var(--ink); font-size: 15.5px; font-weight: 800; letter-spacing: -0.04em; }
+  .neon h3 { margin-top: 22px; font-size: clamp(34px, 7.6vw, 50px); line-height: 1.15; font-weight: 900; letter-spacing: -0.06em; background: linear-gradient(90deg, #6d7cff, #b8c2ff 55%, #75f3e6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .neon .sp1 { margin-top: 12px; font-size: clamp(16px, 3.6vw, 24px); font-weight: 800; letter-spacing: 0.32em; color: #6d7cff; }
+  .neon .sp2 { margin-top: 6px; font-family: var(--serif); font-size: clamp(16px, 3.6vw, 22px); letter-spacing: 0.12em; color: #8b98ff; }
+  .neon a { margin: 26px auto 0; display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: 27px; background: var(--c-group); color: var(--ink); font-size: 16.5px; font-weight: 800; letter-spacing: -0.04em; }
+  .neon a svg { width: 12px; height: 12px; }
+  .choose { margin-top: 40px; text-align: center; font-size: 15.5px; line-height: 1.7; color: var(--gray); letter-spacing: -0.04em; }
+  .choose a { color: var(--ink); font-weight: 800; border-bottom: 2px solid var(--lav); }
+
+  /* ---------- FAQ ---------- */
+  .faq-list { margin-top: 46px; display: grid; gap: 12px; text-align: left; }
+  .faq details { background: #fff; border: 1.5px solid var(--line); border-radius: 22px; padding: 22px 24px; }
+  .faq details[open] { border-color: #cfc3ff; background: #fcfbff; }
+  .faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px; font-size: clamp(16.5px, 3.6vw, 20px); line-height: 1.45; font-weight: 800; letter-spacing: -0.05em; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .qq { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 900; }
+  .faq summary .tx { flex: 1; }
+  .faq summary .pm { position: relative; flex: none; width: 12px; height: 12px; }
+  .faq summary .pm::before, .faq summary .pm::after { content: ''; position: absolute; left: 0; top: 4.5px; width: 12px; height: 3px; background: var(--ink); border-radius: 2px; }
+  .faq summary .pm::after { transform: rotate(90deg); }
+  .faq details[open] .pm::after { display: none; }
+  .faq details p { margin: 14px 0 2px 48px; font-size: clamp(15px, 3.2vw, 17px); line-height: 1.75; color: var(--gray); letter-spacing: -0.045em; }
+
+  /* ---------- 마지막 ---------- */
+  .final { background: var(--grad); text-align: center; padding: 96px 0 90px; }
+  .final .serif { font-size: clamp(20px, 4.4vw, 28px); color: #1f2329; }
+  .final h2 { margin-top: 12px; font-size: clamp(46px, 11vw, 78px); line-height: 1.12; font-weight: 900; letter-spacing: -0.065em; }
+  .final p.sub { margin-top: 22px; font-size: clamp(16.5px, 3.5vw, 20px); line-height: 1.65; font-weight: 600; color: #2a2e3a; letter-spacing: -0.04em; }
+  .final .ph { margin: 44px auto 0; max-width: 520px; border-radius: 30px; overflow: hidden; aspect-ratio: 16 / 10; border: 6px solid #fff; }
+  .final .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .final .btn { margin: 40px auto 0; max-width: 460px; }
+  .final .svc-pills a { background: rgba(255,255,255,.75); border-color: transparent; }
+  .foot { background: var(--dark); color: #8b90a0; padding: 30px 0; font-size: 14px; }
+  .foot .in { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .foot a { color: #fff; font-weight: 800; }
+
+  /* ---------- 반응형 ---------- */
+  @media (max-width: 640px) {
+    :root { --P: 20px; }
+    .topbar a { font-size: 12.5px; gap: 6px; padding: 10px 12px; }
+    .site-header .in { height: 62px; }
+    .logo { font-size: 26px; }
+    .nav { gap: 0; }
+    .nav a:not(.go) { display: none; }
+    .nav .go { height: 36px; padding: 0 14px; font-size: 14px; }
+    .sec { padding: 72px 0; }
+    .hero { padding: 48px 0 60px; }
+    .hero .tagp { font-size: 12.5px; height: 34px; padding: 0 13px; }
+    .hero-pre { margin-top: 26px; }
+    .hero-photo { margin-top: 34px; }
+    .hero-photo .ph { border-radius: 24px; }
+    .stk { font-size: 12px; padding: 8px 11px; border-radius: 11px; }
+    .stk.s1 { left: -6px; top: 14px; }
+    .stk.s2 { right: -6px; }
+    .stk.s3 { left: -4px; bottom: 14px; }
+    .hero-cta { margin-top: 34px; }
+    .btn { height: 62px; }
+    .svc-pills a { height: 34px; font-size: 13px; padding: 0 11px; }
+    .marquee { padding: 14px 0; }
+    .marquee .item { font-size: 15px; padding: 0 18px; }
+    .marquee .item b { font-size: 19px; }
+    .bubbles3 { height: 330px; max-width: 350px; margin-top: 36px; }
+    .bub { width: 162px; height: 162px; }
+    .bub span { font-size: 15.5px; }
+    .bub b { font-size: 22px; margin-top: 3px; }
+    .bub.l, .bub.r { top: 136px; }
+    .night { width: 180px; height: 180px; margin-top: -26px; border-width: 6px; }
+    .big-q { margin-top: 34px; }
+    .panel { border-radius: 28px; padding: 46px 18px 0; }
+    .sp { padding: 18px 20px; border-radius: 22px; margin-top: 30px; }
+    .panel-photo { width: 92%; margin-top: 40px; border-radius: 22px 22px 0 0; }
+    .turn-steps li { padding: 18px 18px; border-radius: 18px; }
+    .cred { margin-top: 46px; padding: 24px 20px; border-radius: 22px; }
+    .cred li, .cred2 li { padding-left: 22px; }
+    .cred li + li, .cred2 li + li { margin-top: 14px; }
+    .cred2 { padding: 0 20px; }
+    .why-photo { border-radius: 22px; margin-top: 40px; }
+    .countries { font-size: 10.5px; letter-spacing: 0.16em; padding: 30px 12px 12px; }
+    .gl { gap: 16px; padding: 20px 18px; border-radius: 20px; }
+    .gl .n { width: 52px; height: 52px; border-radius: 14px; font-size: 19px; }
+    .rv-band { padding: 48px 0 44px; }
+    .wall { padding: 50px 0 56px; }
+    .wall-bg { grid-template-columns: 1fr 1fr; gap: 16px; padding: 12px 14px; font-size: 12px; }
+    .wall-bg .col3 { display: none; }
+    .rv { padding: 30px 22px 26px; border-radius: 24px; }
+    .guide { grid-template-columns: 1fr; }
+    .pkgs { margin-top: 60px; gap: 58px; }
+    .pkg { padding: 52px 20px 22px; border-radius: 26px; }
+    .pkg-no { width: 64px; height: 64px; top: -32px; font-size: 26px; border-width: 4px; }
+    .pkg-head { flex-direction: column; align-items: flex-start; }
+    .pkg-price { flex-direction: row; align-items: baseline; gap: 8px; padding: 8px 14px; border-radius: 14px; }
+    .stamp { width: 92px; height: 92px; top: -38px; right: -4px; }
+    .stamp span { font-size: 10.5px; }
+    .stamp b { font-size: 19px; }
+    .stamp small { font-size: 9.5px; }
+    .pkg-go { height: 54px; }
+    .neon { padding: 40px 18px 30px; border-radius: 24px; }
+    .neon .new { font-size: 34px; top: -20px; right: 14px; }
+    .neon .sp1 { letter-spacing: 0.2em; }
+    .faq details { padding: 18px 16px; border-radius: 18px; }
+    .faq summary .qq { width: 30px; height: 30px; font-size: 13px; }
+    .faq details p { margin-left: 0; }
+    .final { padding: 72px 0 66px; }
+    .final .ph { border-radius: 22px; border-width: 4px; }
+    .foot .in { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ---------- 모바일 가독성: 상세 페이지처럼 화면 폭에 비례해 커지도록 ---------- */
+  @media (max-width: 640px) {
+    .serif { font-weight: 700; }
+    .topbar a { font-size: clamp(13px, 3.5vw, 15.5px); }
+    .logo { font-size: clamp(26px, 7vw, 32px); }
+    .nav .go { height: auto; padding: 9px 15px; font-size: clamp(14px, 3.7vw, 16.5px); }
+    .chip { height: auto; padding: 9px 16px; font-size: clamp(13.5px, 3.6vw, 16px); }
+    .sec-pre { font-size: clamp(20px, 5.4vw, 27px); color: var(--ink); }
+    .sec-h { font-size: clamp(36px, 9.6vw, 50px); }
+    .body-t { font-size: clamp(17px, 4.5vw, 22px); line-height: 1.75; color: #353946; }
+
+    .hero .tagp { height: auto; padding: 9px 15px; font-size: clamp(13px, 3.5vw, 16px); }
+    .hero-pre { font-size: clamp(19px, 5vw, 26px); color: var(--ink-2); }
+    .hero-h { font-size: clamp(46px, 12.6vw, 66px); }
+    .hero-sub { font-size: clamp(17.5px, 4.7vw, 23px); color: #353946; }
+    .hero-photo { margin-left: -6px; margin-right: -6px; }
+    .stk { font-size: clamp(12.5px, 3.4vw, 16px); padding: 9px 13px; }
+    .btn { height: clamp(62px, 16.5vw, 76px); font-size: clamp(18px, 4.8vw, 23px); }
+    .svc-pills a { height: auto; padding: 9px 14px; font-size: clamp(14px, 3.7vw, 17px); }
+    .marquee { padding: 16px 0; }
+    .marquee .item { font-size: clamp(16px, 4.3vw, 20px); }
+    .marquee .item b { font-size: clamp(20px, 5.6vw, 26px); }
+
+    .bubbles3 { max-width: none; height: min(82vw, 470px); }
+    .bub { width: min(44vw, 236px); height: min(44vw, 236px); }
+    .bub.l, .bub.r { top: min(38vw, 196px); }
+    .bub span { font-size: clamp(15.5px, 4.3vw, 22px); }
+    .bub b { font-size: clamp(23px, 6.2vw, 32px); }
+    .night { width: min(52vw, 260px); height: min(52vw, 260px); margin-top: -5vw; }
+    .big-q { font-size: clamp(32px, 8.6vw, 46px); }
+
+    .panel-h { font-size: clamp(25px, 6.6vw, 34px); }
+    .panel-h .serif { color: #d5d8de; }
+    .sp { font-size: clamp(19.5px, 5.2vw, 27px); }
+    .panel-photo { width: 100%; }
+    .turn-steps li { font-size: clamp(17.5px, 4.7vw, 22px); color: #2a2e3a; }
+    .turn-end { font-size: clamp(22px, 5.8vw, 30px); }
+
+    .why-line { font-size: clamp(20px, 5.4vw, 30px); }
+    .why-big { font-size: clamp(42px, 11.4vw, 64px); }
+    .cred, .cred2 { padding-left: 20px; padding-right: 20px; }
+    .cred li, .cred2 li { font-size: clamp(17px, 4.6vw, 22px); color: #22252f; }
+    .countries { font-size: clamp(11px, 3vw, 14px); }
+
+    .gl .n { width: clamp(52px, 14vw, 66px); height: clamp(52px, 14vw, 66px); font-size: clamp(19px, 5.2vw, 24px); }
+    .gl h3 { font-size: clamp(19.5px, 5.2vw, 24px); }
+    .gl p { font-size: clamp(15.5px, 4.1vw, 18px); color: #c3c7d0; }
+    .dark-note { font-size: clamp(17px, 4.5vw, 21px); }
+
+    .rv-band h2 { font-size: clamp(46px, 12.4vw, 70px); }
+    .rv-band p { font-size: clamp(16.5px, 4.4vw, 20px); }
+    .rv blockquote { font-size: clamp(20.5px, 5.5vw, 27px); }
+    .rv small { font-size: clamp(14px, 3.7vw, 16px); }
+    .wall-note { font-size: clamp(14px, 3.7vw, 16px); }
+
+    .guide b { font-size: clamp(17px, 4.6vw, 20px); }
+    .guide span { font-size: clamp(15px, 4vw, 18px); color: #353946; }
+    .pkg-for { font-size: clamp(12.5px, 3.4vw, 15px); }
+    .pkg h3 { font-size: clamp(34px, 9vw, 44px); }
+    .pkg-price strong { font-size: clamp(22px, 6vw, 28px); }
+    .pkg-price s, .pkg-price small { font-size: clamp(12.5px, 3.3vw, 14px); }
+    .pkg-pitch { font-size: clamp(17px, 4.6vw, 21px); color: #2f3340; }
+    .pkg-bar { font-size: clamp(15.5px, 4.2vw, 19px); }
+    .pkg li { font-size: clamp(16px, 4.3vw, 19.5px); color: #2f3340; }
+    .pkg-go { height: clamp(56px, 15vw, 64px); font-size: clamp(16.5px, 4.4vw, 19px); }
+    .neon .pill { height: auto; padding: 9px 18px; font-size: clamp(14.5px, 3.9vw, 17px); }
+    .neon h3 { font-size: clamp(34px, 9vw, 48px); }
+    .neon .sp1 { font-size: clamp(15px, 4vw, 20px); }
+    .neon .sp2 { font-size: clamp(16px, 4.3vw, 21px); }
+    .neon a { height: clamp(52px, 14vw, 58px); font-size: clamp(16.5px, 4.4vw, 19px); }
+    .choose { font-size: clamp(15.5px, 4.1vw, 18px); }
+
+    .faq summary { font-size: clamp(17.5px, 4.7vw, 21px); }
+    .faq details p { font-size: clamp(16px, 4.3vw, 19px); color: #4b5060; }
+
+    .final .serif { font-size: clamp(19px, 5vw, 26px); }
+    .final h2 { font-size: clamp(48px, 12.8vw, 70px); }
+    .final p.sub { font-size: clamp(17px, 4.6vw, 21px); }
+    .foot { font-size: clamp(14px, 3.7vw, 16px); }
+  }
+  br.mo { display: none; }
+  .panel-h .serif { display: block; }
+
+  /* 히어로·마지막: 대상별 컨설팅 바로가기 */
+  .pick { margin: 16px auto 0; max-width: 460px; background: rgba(255,255,255,.92); border: 1.5px solid var(--line); border-radius: 22px; padding: 6px 18px; text-align: left; box-shadow: 0 8px 24px rgba(17,19,27,.05); }
+  .pick-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; }
+  .pick-row + .pick-row { border-top: 1.5px dashed var(--line); }
+  .pick-k { flex: none; width: 92px; font-size: 14.5px; font-weight: 800; color: var(--ink); letter-spacing: -0.04em; }
+  .pick-btns { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .pick-btns a { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 18px; background: #fff; border: 1.5px solid var(--line); font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.04em; white-space: nowrap; transition: border-color .15s ease; }
+  .pick-btns a:hover { border-color: var(--ink); }
+  .pick-btns i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+  .pick-btns em { font-style: normal; font-size: 13.5px; font-weight: 600; color: var(--gray); letter-spacing: -0.03em; }
+  .final .pick { background: rgba(255,255,255,.8); border-color: transparent; }
+  @media (max-width: 640px) {
+    .pick { padding: 4px 16px; }
+    .pick-k { width: auto; min-width: 25vw; font-size: clamp(14.5px, 3.9vw, 17px); }
+    .pick-btns a { font-size: clamp(14.5px, 3.9vw, 17px); padding: 8px 12px; }
+    .pick-btns em { font-size: clamp(13px, 3.4vw, 15px); }
+  }
+  @media (max-width: 640px) {
+    br.pc { display: none; }
+    br.mo { display: inline; }
+    .panel-h .serif { font-size: clamp(19px, 5vw, 26px); margin-bottom: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 상단 띠: 그룹 1기 모집이 끝나면(10/25 이후) 지우거나 2기 안내로 바꿔주세요 -->
+<div class="topbar">
+  <a href="group/"><b>그룹 1기 모집 중</b><span>·</span>10월 25일(일) 사전 신청 마감<span>→</span></a>
+</div>
+
+<header class="site-header">
+  <div class="in">
+    <a class="logo" href="./">꽃디</a>
+    <nav class="nav">
+      <a href="#story">꽃디 이야기</a>
+      <a href="#why">왜 꽃디일까</a>
+      <a href="#reviews">후기</a>
+      <a class="go" href="#services">컨설팅 고르기</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 히어로 -->
+<section class="hero">
+  <div class="in">
+    <span class="tagp"><b>@design.kkot</b> · 한국 떠난 16년 차 디자이너</span>
+    <p class="hero-pre serif">회사원에서 프리랜서, 디지털노마드까지</p>
+    <h1 class="hero-h">일을 위해<br><span class="ghl">삶을 미루지 않도록</span></h1>
+    <p class="hero-sub">제가 직접 부딪히며 찾은 방법을<br><b>지금 당신의 상황에 맞게 나눠드려요</b></p>
+    <div class="hero-photo">
+      <div class="ph"><img src="images/hero-main.jpg" alt="해외에서 노트북으로 일하는 꽃디" loading="eager"></div>
+      <span class="stk s1"><i></i>국내·해외 프로젝트 500건+</span>
+      <span class="stk s2"><i></i>16년 차 디자이너</span>
+      <span class="stk s3"><i></i>나라를 옮기며 일하는 중</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-ink" href="#services">나에게 맞는 컨설팅 찾기
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2 V13.5 M3 9 L8 14 L13 9" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+      </a>
+      <div class="pick">
+        <div class="pick-row"><span class="pick-k">디자이너라면</span><span class="pick-btns"><a href="1on1/" style="--c: var(--c-1on1)"><i></i>6주 1:1</a><a href="group/" style="--c: var(--c-group)"><i></i>6주 그룹</a></span></div>
+        <div class="pick-row"><span class="pick-k">누구나</span><span class="pick-btns"><a href="nomad/" style="--c: var(--c-nomad)"><i></i>60분 1회</a><em>직업 상관없이</em></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 숫자 마퀴 -->
+<div class="marquee" aria-label="꽃디 경력 요약">
+  <div class="track">
+    <span class="item">디자인 경력 <b>16년</b></span><span class="item star">✦</span>
+    <span class="item">프리랜서 <b>11년</b></span><span class="item star">✦</span>
+    <span class="item">국내·해외 프로젝트 <b>500건+</b></span><span class="item star">✦</span>
+    <span class="item">일하며 지낸 나라 <b>11개국</b></span><span class="item star">✦</span>
+    <span class="item">인스타그램 <b>5,800명+</b></span><span class="item star">✦</span>
+    <span class="item" aria-hidden="true">디자인 경력 <b>16년</b></span><span class="item star" aria-hidden="true">✦</span>
+    <span class="item" aria-hidden="true">프리랜서 <b>11년</b></span><span class="item star" aria-hidden="true">✦</span>
+    <span class="item" aria-hidden="true">국내·해외 프로젝트 <b>500건+</b></span><span class="item star" aria-hidden="true">✦</span>
+    <span class="item" aria-hidden="true">일하며 지낸 나라 <b>11개국</b></span><span class="item star" aria-hidden="true">✦</span>
+    <span class="item" aria-hidden="true">인스타그램 <b>5,800명+</b></span><span class="item star" aria-hidden="true">✦</span>
+  </div>
+</div>
+
+<!-- STORY 01 -->
+<section class="sec story1 c" id="story">
+  <div class="in">
+    <span class="chip"><i></i>STORY 01 · 회사원 디자이너</span>
+    <p class="sec-pre serif">매일 출근해 정해진 곳에서 일하는 게<br>당연한 줄 알았어요. 그러던 어느 날,</p>
+    <div class="bubbles3" aria-hidden="true">
+      <div class="bub t"><span>3일 밤낮없이</span><b>야근하고</b></div>
+      <div class="bub l"><span>집에도</span><b>못 가고</b></div>
+      <div class="bub r"><span>머릿속엔</span><b>질문 하나</b></div>
+    </div>
+    <div class="night"><img src="images/s01-office.jpg" alt="늦은 밤 노트북 앞에서 일하는 모습" loading="lazy"></div>
+    <p class="big-q">“나는 앞으로도<br><span class="ghl">이렇게 살아야 할까?</span>”</p>
+    <p class="body-t">돈도 중요하지만, 내 삶은 내가 선택하며 살고 싶었어요.<br class="pc"> 방법을 몰라서 <b>직접 해봤어요.</b> 프리랜서로 독립해 일을 찾고,<br class="pc"> 안 맞으면 바꿔보면서 <b>11년 동안 500건 넘는 프로젝트</b>를 했어요.</p>
+  </div>
+</section>
+
+<!-- STORY 02 -->
+<section class="sec story2">
+  <div class="in">
+    <div class="panel">
+      <span class="chip">STORY 02 · 출국 한 달 전</span>
+      <p class="panel-h"><span class="serif">드디어 한국을 떠나기로 한 그때,</span>가장 큰 위기가 왔어요</p>
+      <div><span class="sp">“해외 나가면<br><b>일 다 끊기는 거</b> 아니야?”</span></div>
+      <div><span class="sp s2">“출국 한 달 전인데…<br><em>메인 거래처가 끊겼어.</em>”</span></div>
+      <div class="panel-photo"><img src="images/s06-kkotdi.jpg" alt="해외 숙소에서 노트북으로 일하는 꽃디" loading="lazy"></div>
+    </div>
+    <div class="turn">
+      <span class="chip"><i></i>그래서 이렇게 했어요</span>
+      <ol class="turn-steps">
+        <li><b>제안서와 포트폴리오</b>를<br>처음부터 다시 만들고</li>
+        <li><b>원격 근무를 반기는 곳</b>에만<br>집중해서 제안했어요</li>
+        <li class="on">9개월이 지난 지금,<br><b>유럽과 남미를 오가며 일해요</b></li>
+      </ol>
+      <p class="turn-end serif">일을 위해 삶을 미루는 대신,<br><b>원하는 삶 안에 일을 놓고 살아요.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why c" id="why">
+  <div class="in">
+    <span class="chip"><i></i>WHY KKOTDI</span>
+    <p class="sec-pre serif">그래서, 왜 하필 꽃디일까요?</p>
+    <svg class="tri" viewBox="0 -6 520 482" role="img" aria-label="16년 디자인 실무, 11년 프리랜서, 지금도 노마드">
+      <polygon points="260,74 76,392 444,392" fill="none" stroke="#9fe9e0" stroke-width="2.5"/>
+      <polygon points="260,140 140,370 260,300" fill="#8ff5ea"/>
+      <polygon points="260,140 380,370 260,300" fill="#9b84f8"/>
+      <polygon points="140,370 380,370 260,300" fill="#6fd3e6"/>
+      <g>
+        <circle cx="260" cy="74" r="74" fill="#fff" stroke="#75f3e6" stroke-width="3"/>
+        <text x="260" y="70" text-anchor="middle" font-size="32" fill="#12b5a4">16년</text>
+        <text x="260" y="102" text-anchor="middle" font-size="25" fill="#11131b">디자인 실무</text>
+      </g>
+      <g>
+        <circle cx="80" cy="392" r="74" fill="#fff" stroke="#75f3e6" stroke-width="3"/>
+        <text x="80" y="388" text-anchor="middle" font-size="32" fill="#12b5a4">11년</text>
+        <text x="80" y="420" text-anchor="middle" font-size="25" fill="#11131b">프리랜서</text>
+      </g>
+      <g>
+        <circle cx="440" cy="392" r="74" fill="#fff" stroke="#a78bfa" stroke-width="3"/>
+        <text x="440" y="388" text-anchor="middle" font-size="32" fill="#7c5cf0">지금도</text>
+        <text x="440" y="420" text-anchor="middle" font-size="25" fill="#11131b">노마드</text>
+      </g>
+    </svg>
+    <p class="why-line">회사 안과 밖, 해외까지 <b>직접 겪은 디자이너</b>가 만든</p>
+    <p class="why-big"><svg class="brush" viewBox="0 0 400 16" preserveAspectRatio="none" aria-hidden="true"><path d="M4 9 C 80 3, 160 13, 240 7 S 360 5, 396 9" fill="none" stroke="#f2737a" stroke-width="9" stroke-linecap="round" opacity=".85"/></svg><span class="txt gtext">회사 밖 커리어 설계</span></p>
+
+    <ul class="cred">
+      <li>디자인 경력 <b>16년</b> · 그중 프리랜서 <b>11년</b></li>
+      <li>국내·해외 프로젝트 <b>500건+</b> (브랜딩·편집·콘텐츠·교육)</li>
+      <li>유럽·남미 등 <b>11개국</b>에서 일한 디지털노마드 디자이너</li>
+    </ul>
+    <ul class="cred2">
+      <li>출국 직전 거래처를 잃고도 <b>원격 일로 다시 수입을 만든</b> 경험</li>
+      <li>인스타그램 <b>@design.kkot</b> 팔로워 <b>5,800명+</b></li>
+      <li>디자이너부터 작가, 음악 전공자까지<br><b>다양한 직업의 커리어 컨설팅</b> 진행</li>
+    </ul>
+
+    <figure class="why-photo">
+      <img src="images/s05-session.jpg" alt="노트북으로 일하는 꽃디" loading="lazy">
+      <figcaption class="countries">PORTUGAL · SPAIN · FRANCE · ITALY<br>BRAZIL · CHILE · PERU · NEW ZEALAND</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 원칙 -->
+<section class="sec dark c">
+  <div class="in">
+    <span class="chip">HOW I CONSULT</span>
+    <p class="sec-pre serif">세 가지 컨설팅 모두,</p>
+    <h2 class="sec-h">이 네 가지는<br><span class="gtext" style="background-image: linear-gradient(90deg,#75f3e6,#a78bfa)">똑같이 지켜요</span></h2>
+    <div class="glass">
+      <div class="gl"><span class="n">01</span><div><h3>퇴사부터 권하지 않아요</h3><p>지금 자리에서 가능성부터 확인해요.</p></div></div>
+      <div class="gl"><span class="n">02</span><div><h3>남의 방법보다 내 경험에서 출발해요</h3><p>해온 일, 잘하는 것, 원하는 삶부터 봐요.</p></div></div>
+      <div class="gl"><span class="n">03</span><div><h3>알아보기에서 끝내지 않아요</h3><p>지원·제안이든 첫 행동이든, 직접 해봐요.</p></div></div>
+      <div class="gl"><span class="n">04</span><div><h3>정답은 하나가 아니에요</h3><p>해외든 국내 원격이든, 나에게 맞는 방식으로.</p></div></div>
+    </div>
+    <p class="dark-note"><b>“당장 퇴사하세요”도, “디지털노마드가 되세요”도 아니에요.</b><br>지금 해온 것에서 무엇부터 바꿀지 함께 정해요.</p>
+  </div>
+</section>
+
+<!-- 후기 -->
+<section id="reviews">
+  <div class="rv-band">
+    <div class="in">
+      <h2>참여자 실제 후기</h2>
+      <p>하는 일은 달라도, 고민은 비슷했어요</p>
+    </div>
+  </div>
+  <div class="wall">
+    <div class="wall-bg" aria-hidden="true">
+      <div>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+      </div>
+      <div>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+      </div>
+      <div class="col3">
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+        <p><b>[후기] 디자인 회사 재직 · 가족과 해외생활 준비 중</b>디자이너로서 프리랜서 디노 방법이 모호했는데, 구체적으로 해갈 수 있는 꽃디님의 방법을 알려주셔서 유용했어요.</p>
+        <p><b>[후기] 독립출판 작가 · 해외생활 준비 중</b>깊이 있게 고민해 오신 게 느껴졌어요. 제 상황에는 어떤 쪽의 접근이 좀 더 쉬울지 단기적으로 지금 시도해 볼 수 있는 것들과, 그 시도를 통해 필요한 장기적인 조건까지 짚어주셔서 좋았어요.</p>
+        <p><b>[후기] 음악 전공 · 발리 2달살기 중</b>컨설팅 이후에도 꾸준히 연락 주시면서 계속 방향성을 잡아 주셔서 좋았어요. 부족하거나 궁금한 부분을 함께 얘기하면서 도와주시는 모습에 너무나 큰 감사함을 느끼고 있어요.</p>
+      </div>
+    </div>
+    <div class="in">
+      <div class="rv-cards">
+        <div class="rv">
+          <div class="q" aria-hidden="true">“</div>
+          <blockquote>디자이너로서 프리랜서 디노 방법이 모호했는데, <b class="mhl">구체적으로 해갈 수 있는 방법</b>을 알려주셔서 <b>유용했어요.</b></blockquote>
+          <small>디자인 회사 재직 · 가족과 해외생활 준비 중</small>
+        </div>
+        <div class="rv">
+          <div class="q" aria-hidden="true">“</div>
+          <blockquote>단기적으로 <b class="mhl">지금 시도해 볼 수 있는 것들</b>과, 그 시도를 통해 <b class="mhl">필요한 장기적인 조건</b>까지 짚어주셔서 좋았어요.</blockquote>
+          <small>독립출판 작가 · 해외생활 준비 중</small>
+        </div>
+        <div class="rv">
+          <div class="q" aria-hidden="true">“</div>
+          <blockquote>컨설팅 이후에도 <b class="mhl">꾸준히 연락 주시면서</b> 계속 <b>방향성을 잡아 주셔서</b> 좋았어요.</blockquote>
+          <small>음악 전공 · 발리 2달살기 중</small>
+        </div>
+      </div>
+      <p class="wall-note">기존 컨설팅 참여자가 남긴 후기 원문 일부예요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 서비스 -->
+<section class="sec svcs c" id="services">
+  <div class="in">
+    <span class="chip"><i></i>CONSULTING</span>
+    <p class="sec-pre serif">이제, 나에게 맞는 걸 골라볼까요?</p>
+    <h2 class="sec-h">지금 내 상황에<br><span class="ghl">맞는 컨설팅</span></h2>
+    <div class="guide">
+      <div><b>디자이너예요</b><span><i style="background: var(--c-1on1)"></i><i style="background: var(--c-group)"></i>6주 과정으로 실제 지원까지</span></div>
+      <div><b>디자이너가 아니에요</b><span><i style="background: var(--c-nomad)"></i>60분 상담으로 첫 계획부터</span></div>
+    </div>
+
+    <div class="pkgs">
+      <a class="pkg" href="1on1/" style="--c: #75f3e6; --c2: #9be7ff">
+        <span class="pkg-no">01</span>
+        <span class="pkg-for"><i></i>FOR DESIGNERS · 1:1</span>
+        <div class="pkg-head"><h3>6주 1:1 컨설팅</h3><span class="pkg-price"><small>오픈 특별가</small><strong>89만원</strong></span></div>
+        <p class="pkg-pitch">내 상황만 깊게, 6주 내내 1:1로.<br>실제 지원·제안까지 함께해요.</p>
+        <div class="pkg-bar"><b>6주</b> · 1:1 세션 · 한 번에 <b>최대 3명</b></div>
+        <ul>
+          <li>사전 커리어·포트폴리오 분석</li>
+          <li>목표에 맞춘 <b>포트폴리오·지원서</b> 피드백</li>
+          <li>실제 <b>지원·제안</b> 실행과 <b>90일 로드맵</b></li>
+          <li><b>30일 사후 서면 피드백</b> · 졸업생 커뮤니티</li>
+        </ul>
+        <span class="pkg-go">1:1 컨설팅 자세히 보기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></span>
+      </a>
+
+      <a class="pkg" href="group/" style="--c: #ffd84d; --c2: #ffb26b">
+        <span class="pkg-no">02</span>
+        <span class="stamp" aria-hidden="true"><span>1기</span><b>모집 중</b><small>11.02 START</small></span>
+        <span class="pkg-for"><i></i>FOR DESIGNERS · GROUP</span>
+        <div class="pkg-head"><h3>6주 그룹 컨설팅</h3><span class="pkg-price"><s>39만원</s><strong>1기 29만원</strong></span></div>
+        <p class="pkg-pitch">같은 고민의 디자이너들과 6주,<br>이번엔 같이 지원까지 가요.</p>
+        <div class="pkg-bar">그룹 <b>5회</b> + 4주차 <b>1:1 60분</b> · <b>3~6명</b></div>
+        <ul>
+          <li>매주 <b>월요일 저녁 8시</b> · 온라인 60분</li>
+          <li>매주 과제에 <b>서면 코멘트</b>를 먼저 받고 세션</li>
+          <li>세션 녹화본 · 기수 단톡방</li>
+          <li>결제는 <b>개강 확정 후</b> · 10월 25일(일) 마감</li>
+        </ul>
+        <span class="pkg-go">그룹 컨설팅 자세히 보기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></span>
+      </a>
+
+      <a class="pkg" href="nomad/" style="--c: #ffb8dd; --c2: #c4a8ff">
+        <span class="pkg-no">03</span>
+        <span class="pkg-for"><i></i>FOR EVERYONE · 60 MIN</span>
+        <div class="pkg-head"><h3>디지털노마드<br>1회 컨설팅</h3><span class="pkg-price"><small>1회 60분</small><strong>10만원</strong></span></div>
+        <p class="pkg-pitch">디지털노마드, 나도 가능할까?<br>검색만 하던 궁금증을<br class="mo"> 60분 안에 내 계획으로.</p>
+        <div class="pkg-bar"><b>직업 무관</b> · 온라인 1:1 · <b>60분</b></div>
+        <ul>
+          <li>사전 질문지로 내 상황 미리 정리</li>
+          <li>내 일로 가능한 <b>원격 수입 방식</b> 찾기</li>
+          <li>장소·생활비·<b>준비 순서</b> 짚기</li>
+          <li><b>다음 행동 3가지</b> 정리 메모</li>
+        </ul>
+        <span class="pkg-go">60분 상담 자세히 보기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></span>
+      </a>
+    </div>
+
+    <!-- 그룹 1기 모집이 끝나면(10/25 이후) 이 블록을 지우거나 2기 안내로 바꿔주세요 -->
+    <div class="neon">
+      <span class="new" aria-hidden="true">NEW!</span>
+      <span class="pill">혼자 미루던 지원, 이번엔 같이</span>
+      <h3>그룹 컨설팅 1기</h3>
+      <p class="sp1">COHORT 01 · 11.02</p>
+      <p class="sp2">together, to the market</p>
+      <a href="group/">1기 일정 보기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></a>
+    </div>
+
+    <p class="choose">아직 고르기 어렵다면 <a href="https://forms.gle/MSFfUvHtD1qecEVn9" target="_blank" rel="noopener">신청서</a>에서 ‘아직 모르겠어요’를 선택해 주세요.<br class="pc"> 지금 상황에 맞는 쪽을 함께 정해드려요.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq c">
+  <div class="in">
+    <span class="chip"><i></i>Q&amp;A</span>
+    <h2 class="sec-h" style="margin-top: 22px">고르기 전에<br><span class="ghl">궁금한 것</span></h2>
+    <div class="faq-list">
+      <details open>
+        <summary><span class="qq">Q</span><span class="tx">어떤 컨설팅을 골라야 할지 모르겠어요.</span><span class="pm"></span></summary>
+        <p>디자이너로서 회사 밖 일을 실제로 시작해보고 싶다면 6주 과정을, 직업과 상관없이 디지털노마드가 나에게 가능한지 먼저 점검하고 싶다면 60분 1회 컨설팅을 권합니다. 6주 과정 중에서는 내 상황만 깊게 보고 싶다면 1:1, 함께 배우며 페이스를 잡고 싶다면 그룹이 맞습니다.</p>
+      </details>
+      <details>
+        <summary><span class="qq">Q</span><span class="tx">디자이너가 아니어도 신청할 수 있나요?</span><span class="pm"></span></summary>
+        <p>60분 1회 컨설팅은 직업과 상관없이 신청하실 수 있습니다. 6주 1:1·그룹 컨설팅은 포트폴리오와 지원·제안을 함께 다루기 때문에 디자이너를 위한 과정입니다.</p>
+      </details>
+      <details>
+        <summary><span class="qq">Q</span><span class="tx">회사를 다니면서도 할 수 있나요?</span><span class="pm"></span></summary>
+        <p>네, 세 가지 모두 회사를 다니면서 시작할 수 있습니다. 퇴사나 출국 같은 큰 결정은 가능성을 확인한 뒤에 내려도 충분합니다.</p>
+      </details>
+      <details>
+        <summary><span class="qq">Q</span><span class="tx">꽃디님이 해외에 있는데, 상담은 어떻게 하나요?</span><span class="pm"></span></summary>
+        <p>모든 컨설팅은 온라인 화상으로 진행하고, 일정은 한국 시간 기준으로 정합니다. 어디에 계시든 같은 방식으로 만날 수 있습니다.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 마지막 -->
+<section class="final">
+  <div class="in">
+    <p class="serif">퇴사나 출국을 먼저 정하지 않아도 괜찮아요</p>
+    <h2>다음 챕터는<br>지금 자리에서</h2>
+    <p class="sub">내 상황에 맞는 것부터, 꽃디와 함께 시작하세요.</p>
+    <div class="ph"><img src="images/final-lifestyle.jpg" alt="원하는 곳에서 일하는 꽃디" loading="lazy"></div>
+    <a class="btn btn-ink" href="#services">나에게 맞는 컨설팅 고르기
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14 V2.5 M3 7 L8 2 L13 7" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+    </a>
+    <div class="pick">
+      <div class="pick-row"><span class="pick-k">디자이너라면</span><span class="pick-btns"><a href="1on1/" style="--c: var(--c-1on1)"><i></i>6주 1:1</a><a href="group/" style="--c: var(--c-group)"><i></i>6주 그룹</a></span></div>
+      <div class="pick-row"><span class="pick-k">누구나</span><span class="pick-btns"><a href="nomad/" style="--c: var(--c-nomad)"><i></i>60분 1회</a><em>직업 상관없이</em></span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="in">
+    <a href="https://www.instagram.com/design.kkot/" target="_blank" rel="noopener">꽃디 · @design.kkot</a>
+    <span>ⓒ 2026 꽃디. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

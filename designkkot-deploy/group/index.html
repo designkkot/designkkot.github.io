@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디지털노마드 디자이너 그룹 컨설팅</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --dark: #11131b;
+    --dark-2: #161922;
+    --dark-line: #2e323d;
+    --mint: #75f3e6;
+    --blue: #304bff;
+    --blue-shadow: #4159ff;
+    --blue-tint: #f0f3ff;
+    --blue-tint-2: #edf0fd;
+    --blue-line: #d6dcf5;
+    --bg: #f4f5f8;
+    --line: #dfe2ea;
+    --ink: #11131b;
+    --ink-2: #1f2329;
+    --gray: #6b7080;
+    --gray-2: #767a84;
+    --gray-3: #8b90a0;
+    --W: 586px;   /* 콘텐츠 컬럼 폭 */
+    --P: 36px;    /* 좌우 여백 */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  a { color: inherit; text-decoration: none; }
+  .nw { white-space: nowrap; }
+  .in { max-width: var(--W); margin: 0 auto; padding: 0 var(--P); }
+
+  /* ---------- 공통 섹션 ---------- */
+  .sec { padding: 70px 0 64px; }
+  .sec.gray { background: var(--bg); }
+  .sec.blue { background: var(--blue); }
+  .sec.dark { background: var(--dark); }
+  .sec.mint { background: var(--mint); }
+
+  .eyebrow {
+    font-size: 15.5px;
+    font-weight: 800;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    color: var(--blue);
+  }
+  .eyebrow .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 24px; height: 24px; margin-right: 8px; border-radius: 50%;
+    background: var(--blue); color: #fff;
+    font-size: 11.5px; font-weight: 800; letter-spacing: 0; line-height: 1;
+    vertical-align: 1px; font-variant-numeric: tabular-nums;
+  }
+  .sec.blue .eyebrow .num { background: #fff; color: var(--blue); }
+  .sec.dark .eyebrow .num { background: var(--mint); color: var(--dark); }
+  .title {
+    margin-top: 26px;
+    margin-bottom: 40px;
+    font-size: clamp(32px, 7.9vw, 46px);
+    line-height: 1.26;
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    color: var(--ink);
+  }
+  .title .b { color: var(--blue); }
+  .title .m { color: var(--mint); }
+
+  /* ---------- 헤더 ---------- */
+  .site-header { background: #fff; border-bottom: 2px solid #eeeeee; }
+  .site-header .in {
+    height: 103px;
+    padding: 0 43px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-size: 36px; font-weight: 900; letter-spacing: -0.06em; color: var(--ink); }
+  .tagline { font-size: 16.5px; color: var(--gray-2); letter-spacing: -0.02em; }
+
+  /* ---------- 히어로 ---------- */
+  .hero { background: var(--dark); color: #fff; padding: 48px 0 48px; }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .hero-eyebrow { font-size: 14px; font-weight: 800; letter-spacing: 0.045em; color: #a9b0c6; }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 42px; padding: 0 16px;
+    border: 2px solid #5b5d62; border-radius: 21px;
+    font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+  .hero-title {
+    margin-top: 41px;
+    font-size: clamp(42px, 10.9vw, 64px);
+    line-height: 1.19;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+  }
+  .hero-title .m { color: var(--mint); }
+  .hero-sub { margin-top: 31px; font-size: clamp(20px, 4.45vw, 26px); line-height: 1.62; letter-spacing: -0.04em; }
+  .hero-sub .l1 { color: #c9ccd3; font-weight: 400; }
+  .hero-sub .l2 { color: #fff; font-weight: 800; }
+
+  .scene {
+    margin-top: 34px;
+    border: 1.5px solid #404553;
+    border-radius: 30px;
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.007) 0 2px, transparent 2px 6px),
+      linear-gradient(160deg, #242736 0%, #1b1e29 60%, #191c27 100%);
+    overflow: hidden;
+  }
+  .scene-bar { display: flex; align-items: center; justify-content: space-between; height: 58px; padding: 0 21px 0 22px; }
+  .scene-bar .dots { display: flex; gap: 7px; }
+  .scene-bar .dots i { width: 9px; height: 9px; border-radius: 50%; background: #63697c; }
+  .scene-label { font-size: 15px; letter-spacing: 0.13em; color: #a7adbb; }
+  .scene .photo-hero { width: auto; margin: 0 20px 20px; border-radius: 16px; background: #1a1d27; }
+  .scene .photo-hero .photo-ph { border-color: #3a3f4c; background: repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 10px, transparent 10px 20px); }
+  .scene .photo-hero .photo-ph svg, .scene .photo-hero .photo-ph span { color: #6b7080; }
+  .scene .photo-hero .photo-ph b { color: #8b90a0; }
+  .photo-cap { position: absolute; left: 14px; bottom: 14px; z-index: 2; padding: 7px 12px; border-radius: 999px; background: rgba(17, 19, 27, 0.72); color: #fff; font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 0.02em; backdrop-filter: blur(6px); }
+
+  .btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 76px; border-radius: 16px;
+    font-size: clamp(18px, 4vw, 23.5px); font-weight: 800; letter-spacing: -0.04em;
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
+  .btn .arr { width: 15px; height: 15px; margin-left: 30px; flex: none; }
+  .btn-mint { background: var(--mint); color: var(--ink); }
+  .btn-blue { background: var(--blue); color: #fff; }
+  .btn-dark { background: var(--dark); color: #fff; }
+  .hero .btn { margin-top: 34px; }
+  .hero-note { margin-top: 16px; text-align: center; font-size: 15px; color: #a9aeb9; line-height: 22px; }
+
+  /* ---------- 숫자 ---------- */
+  .stats { background: #fff; border-bottom: 1.5px solid #eeeeee; }
+  .stats .in { display: grid; grid-template-columns: repeat(3, 1fr); padding: 34px 20px; }
+  .stat { text-align: center; }
+  .stat + .stat { border-left: 2px solid var(--line); }
+  .stat strong { display: block; font-size: clamp(20px, 6.2vw, 36px); line-height: 44px; font-weight: 800; letter-spacing: -0.05em; color: var(--ink); white-space: nowrap; }
+  .stat span { display: block; margin-top: 3px; font-size: 16px; line-height: 24px; color: var(--gray-2); }
+
+  /* ---------- 01 ---------- */
+  .worry {
+    background: #fff; border: 1.5px solid var(--line); border-radius: 24px;
+    padding: 31px 28px;
+    box-shadow: 0 10px 30px rgba(17, 19, 27, 0.04);
+  }
+  .worry + .worry { margin-top: 19px; margin-left: 30px; }
+  .worry p { font-size: clamp(18px, 4.35vw, 25.5px); line-height: 43px; font-weight: 700; letter-spacing: -0.045em; color: var(--ink); }
+  .worry p.b { color: var(--blue); }
+  .rule { height: 0; border-top: 1.5px solid #d8dce4; margin: 42px 0 36px; }
+  .closing { font-size: clamp(20px, 4.7vw, 27.5px); line-height: 40px; font-weight: 800; letter-spacing: -0.05em; color: var(--ink); }
+  .hl { background: linear-gradient(transparent 64%, var(--mint) 64%, var(--mint) 92%, transparent 92%); }
+
+  /* ---------- 02 ---------- */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cmp { border: 1.5px solid var(--line); border-radius: 24px; background: #fff; padding: 33px 22px 33.5px; }
+  .cmp.me { border: 3px solid var(--blue); background: var(--blue-tint); padding: 31.5px 20.5px 32px; }
+  .cmp-label { font-size: 15px; line-height: 20px; font-weight: 800; letter-spacing: 0.08em; color: #7a8091; }
+  .cmp.me .cmp-label { color: var(--blue); }
+  .cmp-title { margin-top: 19px; padding-bottom: 24px; border-bottom: 1.5px solid var(--line); font-size: clamp(16.5px, 4.7vw, 27.5px); line-height: 34px; font-weight: 800; letter-spacing: -0.06em; color: var(--ink); white-space: nowrap; }
+  .cmp.me .cmp-title { color: var(--blue); }
+  .cmp li { list-style: none; height: 62px; display: flex; align-items: center; font-size: clamp(15px, 3.02vw, 17.7px); letter-spacing: -0.04em; color: var(--gray-2); }
+  .cmp li + li { border-top: 1.5px solid var(--line); }
+  .cmp.me li { color: #2a2f45; }
+
+  /* ---------- 03 ---------- */
+  .sec.blue { padding-bottom: 96px; }
+  .blue-note { margin-top: 44px; font-size: clamp(15px, 3vw, 17px); line-height: 27px; color: rgba(255,255,255,0.86); letter-spacing: -0.04em; }
+  .blue-note b { color: #fff; font-weight: 800; }
+  .sec.blue .eyebrow { color: #fff; }
+  .sec.blue .title { color: #fff; }
+  .flow { display: grid; grid-template-columns: 1fr 66px 1fr; align-items: center; }
+  .flow-box { height: 121px; border-radius: 20px; padding: 29px 20px 0; }
+  .flow-box.mine { border: 1.5px solid rgba(255,255,255,0.3); }
+  .flow-box.need { background: var(--mint); }
+  .flow-box .k { font-size: 15px; line-height: 20px; color: rgba(255,255,255,0.82); letter-spacing: -0.02em; }
+  .flow-box.need .k { color: #3e5a58; }
+  .flow-box .v { margin-top: 8px; font-size: clamp(22px, 4.8vw, 28px); line-height: 36px; font-weight: 800; letter-spacing: -0.05em; color: #fff; white-space: nowrap; }
+  .flow-box.need .v { color: var(--ink); }
+  .flow-arrow { display: flex; justify-content: center; }
+  .flow-arrow svg { width: 26px; height: 26px; }
+  .process {
+    margin-top: 41px; background: #fff; border-radius: 24px;
+    padding: 0 25px 25px;
+    box-shadow: 10px 11px 0 0 var(--blue-shadow);
+  }
+  .process-head { display: flex; justify-content: space-between; align-items: center; height: 66px; padding-top: 2px; border-bottom: 1.5px solid var(--line); }
+  .process-head strong { font-size: clamp(15px, 2.82vw, 16.5px); font-weight: 800; letter-spacing: -0.06em; color: var(--ink); }
+  .process-head span { font-size: 12.2px; font-weight: 800; letter-spacing: 0.05em; color: var(--blue); }
+  .prow { display: flex; align-items: center; height: 78px; }
+  .prow + .prow { border-top: 1.5px solid var(--line); }
+  .prow .n { width: 38px; flex: none; font-size: 18px; font-weight: 800; color: #707789; letter-spacing: -0.01em; }
+  .prow .t { flex: 1; font-size: clamp(13.5px, 2.5vw, 14.6px); letter-spacing: -0.05em; color: var(--ink-2); }
+  .prow .tag { flex: none; width: 84px; height: 37px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13.8px; font-weight: 800; background: #e6faf6; color: #126b5e; letter-spacing: -0.02em; }
+  .prow .tag.b { background: #eef0ff; color: var(--blue); }
+
+  /* ---------- 04 ---------- */
+  .assets { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 16px; }
+  .asset { border: 1.5px solid var(--line); border-radius: 24px; background: #fff; padding: 26px 22px 26px; }
+  .asset .no { font-size: 15.5px; line-height: 20px; font-weight: 800; letter-spacing: 0.14em; color: var(--blue); }
+  .asset h3 { margin-top: 11px; font-size: clamp(20px, 4.45vw, 26px); line-height: 33px; font-weight: 700; letter-spacing: -0.05em; color: var(--ink); }
+  .asset .d { margin-top: 15px; font-size: 14.5px; line-height: 20px; letter-spacing: -0.04em; color: var(--gray); }
+  .asset .vis { margin-top: 25px; border-radius: 12px; }
+  .vis-port { height: 126px; background: #f5f6fa; border: 1.5px solid var(--line); padding: 0 13.5px; }
+  .vis-port .dots { display: flex; gap: 4px; height: 29px; align-items: center; }
+  .vis-port .dots i { width: 6px; height: 6px; border-radius: 50%; background: #8c93a6; }
+  .vis-port .tiles { display: grid; grid-template-columns: 92fr 75fr; gap: 7px; height: 80px; }
+  .vis-port .tile { border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+  .vis-port .tile.a { background: var(--blue); color: #fff; font-size: 31px; font-weight: 800; letter-spacing: -0.02em; }
+  .vis-port .tile.g { background: var(--mint); }
+  .vis-port .tile.g svg { width: 25px; height: 25px; }
+  .vis-doc { height: 126px; background: #f5f6fa; border: 1.5px solid var(--line); padding: 21px 17px 0; }
+  .vis-doc i { display: block; height: 7px; border-radius: 4px; background: #d9dde9; margin-top: 11px; }
+  .vis-doc i:first-child { background: var(--blue); width: 60%; margin-top: 0; margin-bottom: 15px; }
+  .vis-doc i:last-child { width: 75%; }
+  .chips { margin-top: 25px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .chips span { height: 51px; border-radius: 12px; background: var(--blue-tint-2); display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 800; letter-spacing: -0.04em; color: #1a1d24; white-space: nowrap; }
+  .asset.road { grid-column: 1 / -1; background: var(--blue-tint); border-color: var(--blue-line); display: grid; grid-template-columns: 1fr 274px; gap: 12px; align-items: start; padding-bottom: 26px; }
+  .asset.road h3 { margin-top: 14px; }
+  .days { margin-top: 17px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .day { height: 104px; background: #fff; border: 1.5px solid var(--blue-line); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .day strong { font-size: 28px; line-height: 34px; font-weight: 800; color: var(--blue); letter-spacing: -0.03em; }
+  .day span { margin-top: 3px; font-size: 12px; letter-spacing: 0.02em; color: var(--gray-2); }
+  .src-note { margin-top: 25px; font-size: 14px; line-height: 20px; color: var(--gray); }
+
+  /* ---------- 05 ---------- */
+  .sec.dark { padding-bottom: 67px; }
+  .sec.dark .eyebrow { color: var(--mint); letter-spacing: 0.01em; }
+  .sec.dark .title { color: #fff; }
+  .pre { min-height: 81px; background: var(--dark-2); border: 1.5px solid var(--dark-line); border-radius: 22px; display: flex; align-items: center; padding: 15px 25px; font-size: clamp(15px, 2.95vw, 17px); color: #c7cad3; letter-spacing: -0.04em; }
+  .pre b { color: #fff; font-weight: 800; margin-right: 4px; }
+  .steps { margin-top: 0; list-style: none; }
+  .steps li { min-height: 81px; padding-top: 17px; padding-bottom: 17px; background: var(--dark-2); border: 1.5px solid var(--dark-line); border-radius: 22px; display: flex; align-items: center; padding: 15px 25px; }
+  .steps li + li { margin-top: 16.5px; }
+  .steps .n { width: 47px; flex: none; align-self: flex-start; line-height: 30px; font-size: 16.5px; font-weight: 800; letter-spacing: 0.14em; color: var(--mint); }
+  .steps .t { line-height: 30px; font-size: clamp(18px, 4.15vw, 24.3px); font-weight: 800; letter-spacing: -0.06em; color: #fff; }
+  .dark-note { margin-top: 24px; font-size: 15px; line-height: 23px; color: #9ca3af; letter-spacing: -0.04em; }
+  .doing { margin-top: 40px; padding-top: 34px; border-top: 1.5px solid var(--dark-line); }
+  .doing-title { font-size: clamp(19px, 3.8vw, 22px); line-height: 30px; font-weight: 800; letter-spacing: -0.05em; color: var(--mint); }
+  .doing p:not(.doing-title) { margin-top: 14px; font-size: clamp(15px, 2.9vw, 17px); line-height: 28px; color: #c7cad3; letter-spacing: -0.04em; }
+  .doing b { color: #fff; font-weight: 800; }
+
+  /* ---------- 06 ---------- */
+  .lead { margin-top: 0; margin-bottom: 41px; font-size: clamp(16px, 3.75vw, 22px); line-height: 34px; color: var(--gray); letter-spacing: -0.05em; }
+  .sec.gray .title + .lead { margin-top: 0; }
+  .profile { position: relative; background: #fff; border: 1.5px solid var(--line); border-radius: 24px; padding: 37px 33px 30.5px; }
+  .profile .name { font-size: 40px; line-height: 50px; font-weight: 900; letter-spacing: -0.05em; color: var(--ink); }
+  .profile .handle { margin-top: 5px; font-size: clamp(14px, 3.2vw, 18.8px); line-height: 24px; color: var(--gray); letter-spacing: -0.02em; }
+  .profile-note { margin-top: 18px; font-size: clamp(14px, 2.55vw, 15px); line-height: 25px; color: #4b5060; letter-spacing: -0.04em; }
+  .profile-note b { display: block; margin-top: 10px; color: var(--ink); font-weight: 800; }
+  .stamp { position: absolute; top: 33px; right: 33px; width: 89px; height: 89px; border: 1.5px solid var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .stamp div { transform: rotate(9deg); text-align: center; color: var(--blue); font-size: 12.8px; line-height: 16px; font-weight: 800; letter-spacing: 0.14em; white-space: nowrap; }
+  .profile .row { margin-top: 33px; padding-top: 25px; border-top: 1.5px solid var(--line); display: grid; grid-template-columns: 212px 30px 1fr; align-items: center; font-size: clamp(14px, 3.07vw, 18px); line-height: 24px; font-weight: 800; letter-spacing: -0.06em; }
+  .profile .row .from { color: var(--gray); }
+  .profile .row .to { color: var(--blue); }
+  .profile .row svg { width: 14px; height: 14px; }
+  .voices { margin-top: 35px; display: grid; gap: 14px; grid-auto-rows: 1fr; }
+  .voice { background: #fff; border: 1.5px solid var(--line); border-radius: 24px; padding: 30px 34px 28px; }
+  .voice blockquote { font-size: clamp(19px, 4.1vw, 24px); line-height: 36px; font-weight: 800; letter-spacing: -0.055em; color: var(--ink); }
+  .voice .hl-full { background: linear-gradient(transparent 8%, var(--mint) 8%, var(--mint) 92%, transparent 92%); }
+  .voice p { margin-top: 12px; font-size: clamp(14.5px, 2.75vw, 16px); line-height: 25px; color: #4b5060; letter-spacing: -0.04em; }
+  .voice small { display: block; margin-top: 14px; font-size: 13.5px; line-height: 20px; color: var(--gray-3); letter-spacing: -0.02em; }
+  .voices-note { margin-top: 16px; font-size: 15px; line-height: 23px; color: var(--gray); letter-spacing: -0.04em; }
+
+  /* ---------- 07 ---------- */
+  .sec.after { padding-bottom: 67px; }
+  .after-card { display: flex; align-items: center; height: 125px; border: 1.5px solid var(--line); border-radius: 22px; padding: 0 26px; background: #fff; }
+  .after-card + .after-card { margin-top: 19px; }
+  .after-card .ic { width: 72px; height: 72px; flex: none; border-radius: 16px; background: var(--blue-tint-2); display: flex; align-items: center; justify-content: center; color: var(--blue); font-weight: 800; }
+  .after-card .ic.vod { font-size: 32px; letter-spacing: -0.07em; }
+  .after-card .ic.n30 { font-size: 32px; letter-spacing: -0.03em; }
+  .after-card .ic svg { width: 36px; height: 20px; }
+  .after-card .tx { margin-left: 21px; }
+  .after-card h3 { font-size: clamp(18px, 4.4vw, 25.8px); line-height: 30px; font-weight: 700; letter-spacing: -0.05em; color: var(--ink); }
+  .after-card p { margin-top: 10px; font-size: clamp(13.5px, 2.73vw, 16px); line-height: 22px; color: var(--gray); letter-spacing: -0.05em; }
+
+  /* ---------- 08 가격 ---------- */
+  .price-sec { text-align: center; background: linear-gradient(180deg, #f4f5f8 0%, #f1f2f8 100%); }
+  .price-sec .title { margin-bottom: 40px; }
+  .price-card {
+    text-align: left; background: #fff; border: 3px solid var(--blue); border-radius: 28px;
+    padding: 37px 33px 38px;
+    box-shadow: 0 24px 70px rgba(48, 75, 255, 0.10);
+  }
+  .price-head { display: flex; justify-content: space-between; align-items: center; height: 38px; }
+  .price-head strong { font-size: clamp(15px, 3.07vw, 18px); font-weight: 800; letter-spacing: -0.06em; color: var(--ink); }
+  .price-head span { height: 38px; padding: 0 15px; border-radius: 19px; background: var(--blue-tint-2); display: inline-flex; align-items: center; font-size: 14.7px; font-weight: 800; color: var(--blue); letter-spacing: -0.06em; white-space: nowrap; }
+  .price { margin-top: 34px; display: flex; align-items: baseline; gap: 6px; }
+  .price strong { font-size: clamp(54px, 13.4vw, 78px); line-height: 80px; font-weight: 800; letter-spacing: -0.045em; color: var(--ink); }
+  .price span { font-size: 24px; font-weight: 800; color: var(--ink); }
+  .price-desc { margin-top: 12px; font-size: clamp(14px, 2.85vw, 16.5px); line-height: 24px; color: var(--gray); letter-spacing: -0.02em; }
+  .includes { list-style: none; margin-top: 27px; padding: 18px 0 20px; border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+  .includes li { display: flex; align-items: center; height: 42px; font-size: clamp(14.5px, 3.05vw, 17.9px); letter-spacing: -0.055em; color: var(--ink-2); }
+  .includes li::before { content: ''; flex: none; width: 29px; height: 12px; background:
+      linear-gradient(var(--blue), var(--blue)) 2px 5px / 10px 2.6px no-repeat,
+      linear-gradient(var(--blue), var(--blue)) 5.7px 1.3px / 2.6px 10px no-repeat; }
+  .price-card .btn { margin-top: 28px; }
+  .price-card .card-note { margin-top: 20px; text-align: center; font-size: 15px; line-height: 22px; color: var(--gray); }
+  .notfit { margin-top: 40px; text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 24px; padding: 28px 30px 26px; }
+  .notfit ul { list-style: none; margin-top: 14px; }
+  .notfit li { position: relative; padding-left: 22px; font-size: clamp(14.5px, 2.85vw, 16.5px); line-height: 26px; color: #4b5060; letter-spacing: -0.045em; }
+  .notfit li + li { margin-top: 8px; }
+  .notfit li::before { content: ''; position: absolute; left: 2px; top: 12px; width: 10px; height: 2.4px; background: #9aa1b2; }
+  .price-sec .after-note { margin-top: 28px; font-size: 15px; line-height: 22px; color: var(--gray); }
+
+  /* ---------- 09 FAQ ---------- */
+  .faq details { border-bottom: 1.5px solid var(--line); padding: 26px 0 32px; }
+  .faq details:first-child { padding-top: 23px; }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: clamp(17px, 3.92vw, 23px); line-height: 30px; font-weight: 800; letter-spacing: -0.06em; color: var(--ink); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .pm { position: relative; width: 12px; height: 12px; flex: none; }
+  .faq summary .pm::before, .faq summary .pm::after { content: ''; position: absolute; left: 0; top: 4.5px; width: 12px; height: 3px; background: var(--blue); }
+  .faq summary .pm::after { transform: rotate(90deg); }
+  .faq details[open] summary .pm::after { display: none; }
+  .faq details:not([open]) { padding-bottom: 26px; }
+  .faq details p { margin-top: 17px; font-size: clamp(15px, 3.19vw, 18.7px); line-height: 33px; color: var(--gray); letter-spacing: -0.05em; }
+
+  /* ---------- 마지막 CTA ---------- */
+  .sec.mint { padding-bottom: 72px; }
+  .sec.mint .eyebrow { color: var(--ink); font-size: 15.3px; letter-spacing: 0.01em; }
+  .final-sub { margin-top: -8px; font-size: clamp(17px, 4.06vw, 23.8px); line-height: 40px; color: var(--ink); letter-spacing: -0.04em; }
+  .sec.mint .btn { margin-top: 46px; }
+  .sign { margin-top: 33px; font-size: 18.4px; line-height: 24px; color: #2a3f3c; letter-spacing: -0.01em; }
+  .fine { margin-top: 25px; font-size: 15.2px; line-height: 20px; color: #1e2b2a; letter-spacing: -0.03em; }
+
+
+
+  /* ---------- 보완 콘텐츠 ---------- */
+  .sub-head { font-size: clamp(16px, 3.1vw, 18px); line-height: 26px; font-weight: 800; letter-spacing: -0.05em; color: var(--ink); }
+  .why { margin-top: 40px; font-size: clamp(17px, 3.4vw, 20px); line-height: 32px; font-weight: 800; letter-spacing: -0.05em; color: var(--ink); }
+  .fit { margin-top: 48px; }
+  .fit-grid { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; grid-auto-rows: 1fr; }
+  .fit-card { background: var(--bg); border-radius: 16px; padding: 18px 18px 19px; display: flex; flex-direction: column; }
+  .fit-card b { display: block; font-size: 14px; line-height: 20px; font-weight: 800; color: var(--blue); letter-spacing: -0.04em; }
+  .fit-card span { display: block; margin-top: 6px; font-size: 15px; line-height: 22px; color: #2a2f45; letter-spacing: -0.04em; }
+  .fit-note { margin-top: 16px; font-size: 15px; line-height: 23px; color: var(--gray); letter-spacing: -0.04em; }
+
+  .steps .tx { display: flex; flex-direction: column; gap: 4px; }
+  .steps .d { font-size: clamp(13px, 2.6vw, 15px); line-height: 20px; color: #9ca3af; letter-spacing: -0.04em; font-weight: 400; }
+  .how { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .how div { border-radius: 16px; background: rgba(117, 243, 230, 0.07); border: 1.5px solid rgba(117, 243, 230, 0.22); padding: 18px 16px; }
+  .how b { display: block; font-size: 16px; line-height: 22px; font-weight: 800; color: var(--mint); letter-spacing: -0.04em; }
+  .how span { display: block; margin-top: 6px; font-size: 14px; line-height: 20px; color: #c7cad3; letter-spacing: -0.04em; }
+
+
+  .price-lead { margin: -16px 0 36px; font-size: clamp(15px, 2.95vw, 17px); line-height: 27px; color: var(--gray); letter-spacing: -0.04em; }
+
+  /* ---------- 이미지 영역 (사진 교체용) ---------- */
+  /* 사용법: figure 안의 주석 처리된 <img> 를 해제하고 src 에 실제 사진 경로를 넣으면
+     플레이스홀더 위를 사진이 덮습니다. 비율은 figure 의 클래스(r-16-9, r-3-2)로 고정됩니다. */
+  .photo { position: relative; width: 100%; margin: 0; border-radius: 20px; overflow: hidden; background: #e9ebf1; }
+  .photo.r-16-9 { aspect-ratio: 16 / 9; }
+  .photo.r-3-2 { aspect-ratio: 3 / 2; }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
+  .photo-ph {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    border: 1.5px dashed #c9cfdc; border-radius: inherit; text-align: center; padding: 0 24px;
+    background: repeating-linear-gradient(135deg, rgba(17,19,27,0.025) 0 10px, transparent 10px 20px);
+  }
+  .photo-ph svg { width: 34px; height: 34px; color: #9aa1b2; }
+  .photo-ph b { font-size: 14px; font-weight: 800; letter-spacing: 0.08em; color: #8b90a0; }
+  .photo-ph span { font-size: 14px; line-height: 20px; color: #9aa1b2; letter-spacing: -0.02em; }
+  .sec.dark .photo { background: #1a1d27; }
+  .sec.dark .photo-ph { border-color: #3a3f4c; background: repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 10px, transparent 10px 20px); }
+  .sec.dark .photo-ph svg, .sec.dark .photo-ph span { color: #6b7080; }
+  .sec.dark .photo-ph b { color: #8b90a0; }
+  .sec.mint .photo { background: rgba(17,19,27,0.06); }
+  .sec.mint .photo-ph { border-color: rgba(17,19,27,0.22); background: repeating-linear-gradient(135deg, rgba(17,19,27,0.03) 0 10px, transparent 10px 20px); }
+  .sec.mint .photo-ph svg, .sec.mint .photo-ph span, .sec.mint .photo-ph b { color: #2f6b64; }
+  .photo-s01 { margin-top: 40px; }
+  .photo-s05 { margin-bottom: 40px; }
+  .photo-s06 { margin-bottom: 40px; }
+  .photo-final { margin-top: 40px; }
+  .sec.mint .photo-final + .btn { margin-top: 40px; }
+
+  /* ---------- 반응형 ---------- */
+  @media (max-width: 560px) {
+    :root { --P: 20px; }
+    .site-header .in { height: 72px; padding: 0 20px; }
+    .logo { font-size: 28px; }
+    .tagline { font-size: 13.5px; }
+    .hero { padding: 36px 0 44px; }
+    .hero-top { flex-wrap: wrap; }
+    .hero-eyebrow { font-size: 12px; }
+    .pill { height: 34px; font-size: 12.5px; padding: 0 12px; border-width: 1.5px; }
+    .hero-title { margin-top: 32px; }
+    .hero-sub { margin-top: 22px; }
+    .scene { border-radius: 22px; margin-top: 28px; }
+    .scene-bar { height: 46px; padding: 0 16px; }
+    .scene-bar .dots i { width: 7px; height: 7px; }
+    .scene-label { font-size: 11.5px; }
+    .scene .photo-hero { margin: 0 14px 14px; border-radius: 12px; }
+    .scene .photo-hero .photo-ph { padding-bottom: 34px; gap: 6px; }
+    .photo-cap { left: 10px; bottom: 10px; font-size: 11.5px; padding: 6px 10px; }
+    .btn { height: 64px; font-size: 18px; border-radius: 14px; }
+    
+    .btn .arr { margin-left: 20px; width: 13px; height: 13px; }
+    .stats .in { padding: 26px 8px; }
+    .stat strong { line-height: 34px; }
+    .stat span { font-size: 13px; }
+    .sec { padding: 56px 0 52px; }
+    .title { margin-top: 18px; margin-bottom: 30px; }
+    .worry { padding: 22px 20px; border-radius: 20px; }
+    .worry + .worry { margin-left: 18px; }
+    .worry p { line-height: 32px; }
+    .rule { margin: 32px 0 28px; }
+    .closing { line-height: 34px; }
+    .compare { gap: 10px; }
+    .cmp, .cmp.me { padding-left: 16px; padding-right: 16px; border-radius: 20px; }
+    .cmp.me { padding-left: 14.5px; padding-right: 14.5px; }
+    .cmp-label { font-size: 12px; letter-spacing: 0.04em; }
+    .cmp-title { white-space: normal; line-height: 28px; }
+    .cmp li { height: 52px; }
+    .flow { grid-template-columns: 1fr 40px 1fr; }
+    .flow-box { height: 104px; padding: 22px 16px 0; border-radius: 16px; }
+    .flow-box .k { font-size: 13px; }
+    .sec.blue { padding-bottom: 72px; }
+    .process { padding: 0 18px 16px; border-radius: 20px; box-shadow: 8px 8px 0 0 var(--blue-shadow); }
+    .prow { height: 68px; }
+    .prow .n { width: 30px; font-size: 16px; }
+    .prow .tag { width: 70px; height: 32px; font-size: 12.5px; }
+    .assets { grid-template-columns: 1fr; }
+    .asset.road { grid-template-columns: 1fr; }
+    .days { margin-top: 18px; }
+    .day { height: 88px; }
+    .chips span { font-size: 13px; }
+    .pre { padding: 14px 20px; min-height: 68px; border-radius: 18px; }
+    .steps { margin-top: 0; }
+    .steps li { height: 68px; padding: 0 20px; border-radius: 18px; }
+    .steps li + li { margin-top: 12px; }
+    .steps .n { width: 40px; font-size: 14.5px; }
+    .profile { padding: 28px 22px 26px; }
+    .profile .name { font-size: 32px; line-height: 40px; }
+    .stamp { width: 74px; height: 74px; top: 24px; right: 20px; }
+    .stamp div { font-size: 10px; line-height: 13px; }
+    .profile .row { grid-template-columns: 1fr 26px 1fr; }
+    .voice { padding: 24px 22px 22px; border-radius: 20px; }
+    .voice blockquote { line-height: 31px; }
+    .after-card { height: auto; min-height: 104px; padding: 18px 18px; }
+    .after-card .ic { width: 60px; height: 60px; }
+    .after-card .ic.vod { font-size: 22px; }
+    .after-card .ic.n30 { font-size: 24px; }
+    .after-card .ic.rec { font-size: 21px; }
+    .after-card .tx { margin-left: 16px; }
+    .price-card { padding: 28px 20px 30px; border-radius: 22px; }
+    .price { margin-top: 26px; }
+    .price strong { line-height: 64px; }
+    .price span { font-size: 20px; }
+    .includes li { height: 38px; }
+    .faq details p { line-height: 28px; }
+    .final-sub { line-height: 32px; }
+    .sec.mint .btn { margin-top: 36px; }
+    .photo { border-radius: 16px; }
+    .photo-ph svg { width: 28px; height: 28px; }
+    .photo-ph b, .photo-ph span { font-size: 12.5px; }
+    .photo-s01, .photo-final { margin-top: 30px; }
+    .photo-s05 { margin-bottom: 30px; }
+    .photo-s06 { margin-bottom: 30px; }
+    .sec.mint .photo-final + .btn { margin-top: 30px; }
+    .fit { margin-top: 36px; }
+    .fit-grid { grid-template-columns: 1fr; gap: 8px; }
+    .fit-card { padding: 15px 16px; }
+    .steps li { height: auto; min-height: 104px; padding-top: 14px; padding-bottom: 14px; }
+    .how { grid-template-columns: 1fr; gap: 8px; margin-top: 30px; }
+    .how div { display: flex; align-items: baseline; gap: 12px; padding: 14px 16px; }
+    .how span { margin-top: 0; }
+    .price-lead { margin: -10px 0 28px; }
+    .notfit { padding: 22px 20px 20px; border-radius: 20px; margin-top: 30px; }
+  }
+  @media (max-width: 340px) {
+    .compare { grid-template-columns: 1fr; }
+    .flow { grid-template-columns: 1fr; gap: 10px; }
+    .flow-arrow { transform: rotate(45deg); }
+    .profile .row { grid-template-columns: 1fr; gap: 6px; }
+    .profile .row svg { transform: rotate(90deg); }
+  }
+
+  /* ---------- 그룹 페이지 전용 ---------- */
+  .topbar { background: var(--blue); }
+  .topbar a { display: block; padding: 13px 20px; text-align: center; font-size: 15px; line-height: 22px; font-weight: 700; color: #fff; letter-spacing: -0.03em; }
+  .topbar b { color: var(--mint); font-weight: 800; }
+  .topbar .sep { margin: 0 8px; opacity: 0.5; }
+
+  .worry.third { margin-left: 30px; }
+
+  /* 03 1:1 vs 그룹 */
+  .plan { border: 1.5px solid var(--line); border-radius: 24px; background: #fff; overflow: hidden; }
+  .plan-row { display: grid; grid-template-columns: 108px 1fr 1fr; }
+  .plan-row + .plan-row { border-top: 1.5px solid var(--line); }
+  .plan-row > div { padding: 17px 16px; font-size: clamp(14px, 2.8vw, 16px); line-height: 23px; letter-spacing: -0.045em; color: #4b5060; }
+  .plan-row > div:first-child { font-size: 13.5px; font-weight: 800; color: var(--gray-3); letter-spacing: -0.03em; }
+  .plan-row > div:last-child { background: var(--blue-tint); color: #2a2f45; font-weight: 700; }
+  .plan-row.head > div { padding-top: 22px; padding-bottom: 20px; font-size: clamp(16px, 3.4vw, 19px); line-height: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.05em; }
+  .plan-row.head > div:last-child { color: var(--blue); }
+  .plan-row.head small { display: block; margin-top: 3px; font-size: 12.5px; line-height: 16px; font-weight: 800; letter-spacing: 0.06em; color: var(--gray-3); }
+  .plan-row.head > div:last-child small { color: var(--blue); }
+  .plan-row .off { color: #a3a8b5; font-weight: 400; }
+  .plan-row.price-row > div:not(:first-child) { font-weight: 800; color: var(--ink); }
+  .plan-row.price-row > div:last-child { color: var(--blue); }
+  .plan-row s { color: #a3a8b5; font-weight: 400; margin-right: 4px; }
+  .plan-note { margin-top: 18px; font-size: 15px; line-height: 24px; color: var(--gray); letter-spacing: -0.04em; }
+  .plan-note a { color: var(--blue); font-weight: 800; }
+
+  /* 05 그룹으로 하는 이유 */
+  .gb-list { display: grid; gap: 14px; }
+  .gb { display: flex; gap: 16px; border: 1.5px solid var(--line); border-radius: 22px; background: #fff; padding: 27px 28px 26px; }
+  .gb .no { width: 38px; flex: none; font-size: 15.5px; line-height: 30px; font-weight: 800; letter-spacing: 0.1em; color: var(--blue); }
+  .gb h3 { font-size: clamp(18px, 4.1vw, 24px); line-height: 30px; font-weight: 800; letter-spacing: -0.055em; color: var(--ink); }
+  .gb p { margin-top: 8px; font-size: clamp(14.5px, 2.85vw, 16.5px); line-height: 25px; color: #4b5060; letter-spacing: -0.045em; }
+  .gb.one { border: 3px solid var(--blue); background: var(--blue-tint); padding: 25.5px 26.5px 24.5px; }
+  .gb.one h3 { color: var(--blue); }
+
+  /* 07 주차 태그 · 한 주 흐름 */
+  .steps .wk { display: inline-flex; align-items: center; height: 24px; margin-left: 10px; padding: 0 9px; border-radius: 6px; background: rgba(117, 243, 230, 0.12); color: var(--mint); font-size: 12.5px; font-weight: 800; letter-spacing: -0.02em; vertical-align: 3px; white-space: nowrap; }
+  .steps .wk.pre-tag { background: rgba(255, 255, 255, 0.08); color: #c7cad3; }
+  .steps li.one { border-color: var(--mint); }
+  .steps li.one .wk { background: var(--mint); color: var(--dark); }
+  .week { margin-top: 40px; padding-top: 34px; border-top: 1.5px solid var(--dark-line); }
+  .week .doing-title + p { margin-top: 10px; font-size: clamp(15px, 2.9vw, 17px); line-height: 28px; color: #c7cad3; letter-spacing: -0.04em; }
+  .wflow { margin-top: 22px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .wf { border-radius: 16px; background: var(--dark-2); border: 1.5px solid var(--dark-line); padding: 17px 14px 16px; }
+  .wf span { display: block; font-size: 12.5px; line-height: 17px; font-weight: 800; color: var(--mint); letter-spacing: -0.02em; }
+  .wf b { display: block; margin-top: 7px; font-size: clamp(15px, 3vw, 17px); line-height: 22px; font-weight: 800; color: #fff; letter-spacing: -0.05em; }
+  .wf.main { border-color: var(--mint); }
+  .wtime { margin-top: 26px; border-radius: 18px; background: var(--dark-2); border: 1.5px solid var(--dark-line); padding: 22px 22px 16px; }
+  .wtime-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.04em; }
+  .wtime-head span { font-size: 12.5px; color: #9ca3af; font-weight: 700; letter-spacing: 0.04em; }
+  .wbar { margin-top: 14px; display: flex; gap: 3px; height: 12px; }
+  .wbar i { border-radius: 4px; background: var(--mint); }
+  .wbar i:nth-child(1) { flex: 10; opacity: 0.45; }
+  .wbar i:nth-child(2) { flex: 20; opacity: 0.7; }
+  .wbar i:nth-child(3) { flex: 25; }
+  .wbar i:nth-child(4) { flex: 5; opacity: 0.3; }
+  .wrow { display: grid; grid-template-columns: 58px 1fr; align-items: baseline; padding: 11px 0; font-size: clamp(14px, 2.8vw, 16px); line-height: 22px; color: #c7cad3; letter-spacing: -0.04em; }
+  .wbar + .wrow { margin-top: 8px; }
+  .wrow + .wrow { border-top: 1px solid var(--dark-line); }
+  .wrow b { color: var(--mint); font-weight: 800; font-variant-numeric: tabular-nums; }
+  .wrow.key span { color: #fff; font-weight: 800; }
+
+  /* 08 녹화본 아이콘 */
+  .after-card .ic.rec { font-size: 29px; letter-spacing: -0.05em; }
+
+  /* 10 일정 */
+  .info { border: 1.5px solid var(--line); border-radius: 24px; background: #fff; padding: 6px 28px; }
+  .info-row { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 18px 0; }
+  .info-row + .info-row { border-top: 1.5px solid var(--line); }
+  .info-row dt { font-size: 14.5px; line-height: 24px; font-weight: 800; color: var(--gray-3); letter-spacing: -0.03em; }
+  .info-row dd { font-size: clamp(15px, 3vw, 17.5px); line-height: 24px; font-weight: 700; color: var(--ink); letter-spacing: -0.05em; }
+  .info-row dd small { display: block; margin-top: 3px; font-size: 14px; line-height: 21px; font-weight: 400; color: var(--gray); letter-spacing: -0.04em; }
+  .info-row dd.b { color: var(--blue); }
+  .dates { margin-top: 18px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+  .date { border-radius: 14px; background: var(--bg); padding: 13px 4px 12px; text-align: center; }
+  .date small { display: block; font-size: 12px; line-height: 16px; font-weight: 800; color: var(--gray-3); letter-spacing: 0.02em; }
+  .date strong { display: block; margin-top: 4px; font-size: clamp(16px, 3.4vw, 20px); line-height: 26px; font-weight: 800; color: var(--ink); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .date span { display: block; margin-top: 2px; font-size: 12.5px; line-height: 17px; font-weight: 700; color: var(--gray); letter-spacing: -0.03em; }
+  .date.one { background: var(--blue); }
+  .date.one small, .date.one span { color: rgba(255, 255, 255, 0.78); }
+  .date.one strong { color: #fff; }
+  .apply { margin-top: 48px; }
+  .apply-steps { list-style: none; margin-top: 18px; border: 1.5px solid var(--line); border-radius: 24px; background: #fff; padding: 8px 26px; }
+  .apply-steps li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; padding: 18px 0; }
+  .apply-steps li + li { border-top: 1.5px solid var(--line); }
+  .apply-steps .c { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-tint-2); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; letter-spacing: 0; }
+  .apply-steps li.go .c { background: var(--blue); color: #fff; }
+  .apply-steps strong { display: block; font-size: clamp(16px, 3.3vw, 19px); line-height: 30px; font-weight: 800; color: var(--ink); letter-spacing: -0.05em; }
+  .apply-steps span.d { display: block; margin-top: 2px; font-size: clamp(14px, 2.8vw, 15.5px); line-height: 23px; color: var(--gray); letter-spacing: -0.04em; }
+  .next-note { margin-top: 18px; font-size: 15px; line-height: 23px; color: var(--gray); letter-spacing: -0.04em; }
+  .next-note b { color: var(--ink); font-weight: 800; }
+
+  /* 11 가격 */
+  .price-was { margin-top: 30px; font-size: 20px; line-height: 24px; font-weight: 700; color: #a3a8b5; letter-spacing: -0.03em; }
+  .price-was s { text-decoration-thickness: 2px; }
+  .price-was + .price { margin-top: 4px; }
+
+  /* 상품 연결 카드 (1:1 ↔ 그룹 공용) */
+  .alt-card { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 24px; padding: 24px 26px; transition: border-color .15s ease; }
+  .alt-card:hover { border-color: var(--blue); }
+  .alt-card .k { font-size: 13.5px; line-height: 18px; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; }
+  .alt-card h3 { margin-top: 6px; font-size: clamp(17px, 3.6vw, 21px); line-height: 28px; font-weight: 800; color: var(--ink); letter-spacing: -0.05em; }
+  .alt-card p { margin-top: 4px; font-size: clamp(13.5px, 2.75vw, 15.5px); line-height: 22px; color: var(--gray); letter-spacing: -0.04em; }
+  .alt-card .go { flex: none; display: inline-flex; align-items: center; height: 40px; padding: 0 15px; border-radius: 20px; background: var(--blue-tint-2); color: var(--blue); font-size: 14.5px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; }
+  .alt-card .go svg { width: 11px; height: 11px; margin-left: 7px; }
+
+  .final-date { margin-top: 18px; font-size: 16px; line-height: 24px; font-weight: 800; color: #1e2b2a; letter-spacing: -0.03em; }
+
+  @media (max-width: 560px) {
+    .topbar a { padding: 11px 16px; font-size: 13px; line-height: 19px; }
+    .topbar .sep { margin: 0 5px; }
+    .worry.third { margin-left: 18px; }
+    .plan { border-radius: 20px; }
+    .plan-row { grid-template-columns: 70px 1fr 1fr; }
+    .plan-row > div { padding: 13px 10px; font-size: 13.5px; line-height: 20px; }
+    .plan-row > div:first-child { font-size: 12px; padding-left: 14px; }
+    .plan-row.head > div { padding-top: 16px; padding-bottom: 15px; font-size: 15px; line-height: 20px; }
+    .plan-row.head small { font-size: 11px; }
+    .gb { padding: 22px 20px; border-radius: 20px; gap: 10px; }
+    .gb.one { padding: 20.5px 18.5px; }
+    .gb .no { width: 30px; font-size: 14px; }
+    .steps .wk { height: 21px; margin-left: 7px; padding: 0 7px; font-size: 11.5px; }
+    .wflow { grid-template-columns: 1fr 1fr; }
+    .wtime { padding: 18px 16px 12px; }
+    .wrow { grid-template-columns: 50px 1fr; }
+    .info { padding: 4px 20px; border-radius: 20px; }
+    .info-row { grid-template-columns: 76px 1fr; gap: 8px; padding: 15px 0; }
+    .info-row dt { font-size: 13px; }
+    .dates { grid-template-columns: repeat(3, 1fr); }
+    .apply { margin-top: 36px; }
+    .apply-steps { padding: 4px 18px; border-radius: 20px; }
+    .apply-steps li { grid-template-columns: 28px 1fr; gap: 12px; padding: 15px 0; }
+    .apply-steps .c { width: 28px; height: 28px; }
+    .alt-card { flex-direction: column; align-items: flex-start; padding: 20px; border-radius: 20px; gap: 14px; }
+    .price-was { margin-top: 24px; font-size: 17px; }
+  }
+
+  /* ---------- 그룹 포인트 컬러 (선샤인 옐로) ---------- */
+  :root { --mint: #ffd84d; }
+  .how div { background: rgba(255,216,77, 0.07); border-color: rgba(255,216,77, 0.24); }
+  .steps .wk { background: rgba(255,216,77, 0.13); }
+  .flow-box.need .k { color: rgba(17, 19, 27, 0.62); }
+  .prow .tag { background: #fff6d6; color: #7a5b00; }
+  .sign { color: rgba(17, 19, 27, 0.78); }
+  .fine, .final-date { color: #11131b; }
+  .sec.mint .photo-ph svg, .sec.mint .photo-ph span, .sec.mint .photo-ph b { color: rgba(17, 19, 27, 0.55); }
+  .hero .pill { background: var(--mint); border-color: var(--mint); color: var(--dark); }
+</style>
+</head>
+<body>
+
+<!-- 모집 띠 배너 -->
+<div class="topbar">
+  <a href="#apply"><b>1기 오픈 특별가 29만원</b><span class="sep">·</span>10월 25일(일) 사전 신청 마감<span class="sep">·</span>11월 2일 시작</a>
+</div>
+
+<!-- 헤더 -->
+<header class="site-header">
+  <div class="in">
+    <a class="logo" href="../">꽃디</a>
+    <div class="tagline">디자이너의 회사 밖 커리어 실험</div>
+  </div>
+</header>
+
+<!-- 히어로 -->
+<section class="hero">
+  <div class="in">
+    <div class="hero-top">
+      <span class="hero-eyebrow">DESIGN YOUR NEXT CHAPTER</span>
+      <span class="pill">6주 그룹 컨설팅</span>
+    </div>
+    <h1 class="hero-title">회사 밖 일,<br>알아보기만<br><span class="m">몇 달째라면</span></h1>
+    <p class="hero-sub"><span class="l1">같은 고민의 디자이너들과 6주,</span><br><span class="l2">이번엔 같이 지원까지 가요</span></p>
+
+    <div class="scene">
+      <div class="scene-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="scene-label">WORK WHERE YOU WANT</span></div>
+      <figure class="photo r-16-9 photo-hero">
+        <img src="../images/hero-main.jpg" alt="해외에서 노트북으로 일하는 꽃디" loading="eager">
+        <div class="photo-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-5.5-5.5L6 19"/></svg><b>PHOTO</b><span>꽃디가 해외에서 노트북으로 일하는 실제 사진<br>16:9 · 1600×900 권장</span></div>
+      </figure>
+    </div>
+
+    <a class="btn btn-mint" href="https://forms.gle/MSFfUvHtD1qecEVn9" target="_blank" rel="noopener">그룹 1기 사전 신청하기
+      <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>
+    </a>
+    <p class="hero-note">결제는 개강 확정 후 · 10월 25일(일) 마감</p>
+  </div>
+</section>
+
+<!-- 숫자 -->
+<section class="stats">
+  <div class="in">
+    <div class="stat"><strong>16년</strong><span>디자인 경력</span></div>
+    <div class="stat"><strong>11년</strong><span>프리랜서 경험</span></div>
+    <div class="stat"><strong>500건+</strong><span>국내·해외 프로젝트</span></div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="sec gray">
+  <div class="in">
+    <p class="eyebrow"><span class="num">01</span>아마 이런 마음일 거예요</p>
+    <h2 class="title">원하는 삶은 있는데<br><span class="b">시작이 막막하다면</span></h2>
+    <div class="worry">
+      <p>회사 이름 없이도</p>
+      <p class="b">내 디자인으로 일을 구할 수 있을까?</p>
+    </div>
+    <div class="worry">
+      <p>원하는 곳에서 일하고 싶은데</p>
+      <p class="b">월급을 놓기는 무서워요</p>
+    </div>
+    <div class="worry third">
+      <p>혼자 알아보기만 하다가</p>
+      <p class="b">몇 달째 제자리예요</p>
+    </div>
+    <figure class="photo r-16-9 photo-s01">
+      <img src="../images/s01-office.jpg" alt="퇴근 후 노트북 앞에서 고민하는 디자이너" loading="lazy">
+      <div class="photo-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-5.5-5.5L6 19"/></svg><b>PHOTO</b><span>회사 책상 · 퇴근 후 노트북 앞에서 고민하는 모습<br>16:9 · 1200×675 권장</span></div>
+    </figure>
+    <div class="rule"></div>
+    <p class="closing">버려야 할 건 경력이 아니라<br><span class="hl">회사 안에서만 쓸 수 있다는 생각</span></p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="sec">
+  <div class="in">
+    <p class="eyebrow"><span class="num">02</span>퇴사 권유가 아닌 가능성 확인</p>
+    <h2 class="title">남의 퇴사 이야기 말고<br><span class="b">내 경력으로 가능한 길</span></h2>
+    <p class="lead">인터넷에는 방법이 넘치지만,<br>지금 내 경력으로 무엇부터 할지는 알려주지 않아요.</p>
+    <div class="compare">
+      <div class="cmp">
+        <p class="cmp-label">남의 이야기</p>
+        <p class="cmp-title">좋아 보이는 방법</p>
+        <ul><li>노마드 도시 검색</li><li>성공 사례만 저장</li></ul>
+      </div>
+      <div class="cmp me">
+        <p class="cmp-label">내 경력에서 출발</p>
+        <p class="cmp-title">내가 해볼 수 있는 일</p>
+        <ul><li>내 강점에 맞는 방향</li><li>직접 제안할 기회</li></ul>
+      </div>
+    </div>
+    <div class="fit">
+      <p class="sub-head">이런 분께 맞아요</p>
+      <div class="fit-grid">
+        <div class="fit-card"><b>디자인 경력을 회사 밖에서 쓰고 싶은 분</b><span>지금 경력과 강점으로 가능한 일과 수익화 방향을 정리해요</span></div>
+        <div class="fit-card"><b>해외에서도 일할 방법을 찾는 분</b><span>해외를 포함한 목표 시장에 맞춰 포트폴리오 방향을 잡아요</span></div>
+        <div class="fit-card"><b>프리랜서·리모트 전환을 준비하는 분</b><span>나에게 맞는 일하는 방식과 먼저 시도할 루트를 정해요</span></div>
+        <div class="fit-card"><b>혼자 하면 자꾸 미루게 되는 분</b><span>같은 고민의 디자이너들과 같은 주에 같은 단계를 밟아요</span></div>
+      </div>
+      <p class="fit-note">2년 차든 10년 차든, 연차보다 지금까지 해온 일에서 출발해 나에게 맞는 방향을 찾아요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 1:1 vs 그룹 -->
+<section class="sec gray">
+  <div class="in">
+    <p class="eyebrow"><span class="num">03</span>나에게 맞는 방식 고르기</p>
+    <h2 class="title">1:1과 그룹,<br><span class="b">무엇이 다를까요?</span></h2>
+    <div class="plan">
+      <div class="plan-row head"><div></div><div><small>1:1</small>혼자 깊게</div><div><small>GROUP</small>함께 실행</div></div>
+      <div class="plan-row"><div>이런 분</div><div>내 상황만 깊게 보고 싶은 분</div><div>함께 배우며 페이스를 잡고 싶은 분</div></div>
+      <div class="plan-row"><div>진행</div><div>6주 내내 1:1</div><div>그룹 5회 + 4주차 1:1</div></div>
+      <div class="plan-row"><div>인원</div><div>최대 3명</div><div>기수당 3~6명</div></div>
+      <div class="plan-row"><div>사전 진단</div><div>커리어·포트폴리오 개별 분석</div><div>사전 설문</div></div>
+      <div class="plan-row"><div>6주간 피드백</div><div>1:1 카톡</div><div>기수 단톡방 + 과제 서면 코멘트</div></div>
+      <div class="plan-row"><div>사후 피드백</div><div>30일 서면 피드백</div><div><span class="off">1:1 전용</span></div></div>
+      <div class="plan-row price-row"><div>가격</div><div>89만원</div><div><s>39만원</s>1기 29만원</div></div>
+    </div>
+    <p class="plan-note">아직 고르기 어렵다면 신청서에서 ‘아직 모르겠어요’를 선택해 주세요. 지금 상황에 맞는 쪽을 함께 정해드려요. <a href="../1on1/">1:1 컨설팅 자세히 보기</a></p>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="sec blue">
+  <div class="in">
+    <p class="eyebrow"><span class="num">04</span>내 경력에 맞는 고객 찾기</p>
+    <h2 class="title">디자인은 할 줄 아는데<br><span class="m">고객은 어디서 찾죠?</span></h2>
+    <div class="flow">
+      <div class="flow-box mine"><p class="k">내가 해온 일</p><p class="v">내 디자인</p></div>
+      <div class="flow-arrow"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 19 L18 4 M7 3.5 H18.5 V15" fill="none" stroke="#ffd84d" stroke-width="2.6"/></svg></div>
+      <div class="flow-box need"><p class="k">연결할 대상</p><p class="v">필요한 고객</p></div>
+    </div>
+    <div class="process">
+      <div class="process-head"><strong>고객 찾기부터 실제 제안까지</strong><span>PROCESS</span></div>
+      <div class="prow"><span class="n">01</span><span class="t">내 경력에 맞는 시장 찾기</span><span class="tag">기회 찾기</span></div>
+      <div class="prow"><span class="n">02</span><span class="t">하고 싶은 일에 맞춰 보여주기</span><span class="tag">자료 준비</span></div>
+      <div class="prow"><span class="n">03</span><span class="t">실제 지원·제안으로 연결하기</span><span class="tag b">직접 실행</span></div>
+    </div>
+    <p class="blue-note"><b>내가 어떤 일을 할 수 있는지부터,<br>누구에게 어떤 방식으로 제안할지까지 함께 정리해요.</b><br>국내외 채용공고, 프로젝트 플랫폼, 네트워크와 SNS에서 지금 내 경력으로 닿을 수 있는 기회를 그룹에서 함께 찾고, <span class="nw">포트폴리오·지원서는</span> 4주차에 1:1로 따로 봐요.</p>
+  </div>
+</section>
+
+<!-- 05 그룹으로 하는 이유 -->
+<section class="sec">
+  <div class="in">
+    <p class="eyebrow"><span class="num">05</span>그룹으로 하는 이유</p>
+    <h2 class="title">혼자서는 멈췄던 곳,<br><span class="b">같이 하면 움직여요</span></h2>
+    <div class="gb-list">
+      <div class="gb">
+        <span class="no">01</span>
+        <div><h3>내 것만 볼 때보다 넓게 배워요</h3><p>다른 디자이너의 포트폴리오, 제안 문구, 시장 반응까지 함께 보면서 내 것을 고칠 힌트를 얻어요.</p></div>
+      </div>
+      <div class="gb">
+        <span class="no">02</span>
+        <div><h3>미루던 지원, 같이 하면 움직여요</h3><p>같은 주에 같은 단계를 밟으니 흐름이 끊기지 않아요. 혼자였다면 다음 주로 넘겼을 지원도 이번 주에 해요.</p></div>
+      </div>
+      <div class="gb">
+        <span class="no">03</span>
+        <div><h3>찾은 기회를 나눠요</h3><p>나한테 맞지 않는 공고가 옆 사람에게는 딱 맞는 기회일 수 있어요. 6주 동안 찾은 기회를 기수 안에서 함께 나눠요.</p></div>
+      </div>
+      <div class="gb one">
+        <span class="no">1:1</span>
+        <div><h3>결정적인 순간에는 1:1로</h3><p>4주차 포트폴리오·지원서는 꽃디와 60분 동안 따로 봐요. 여럿 앞에서 꺼내기 어려운 이야기도 이 시간에 편하게 나눠요.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="sec gray">
+  <div class="in">
+    <p class="eyebrow"><span class="num">06</span>6주 뒤 손에 남는 것</p>
+    <h2 class="title">하고 싶은 일을 향한<br><span class="b">나만의 준비물</span></h2>
+    <div class="assets">
+      <div class="asset">
+        <p class="no">01</p>
+        <h3>하고 싶은 일에<br>맞춘 포트폴리오</h3>
+        <p class="d">목표에 맞춘 핵심 프로젝트</p>
+        <div class="vis vis-port">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="tiles">
+            <div class="tile a">Aa</div>
+            <div class="tile g"><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18 L16 6 M8 5 H17 V14" fill="none" stroke="#11131b" stroke-width="3.6"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="asset">
+        <p class="no">02</p>
+        <h3>내 강점이 담긴<br>지원서 제안 문구</h3>
+        <p class="d">내 경력의 가치를 전달</p>
+        <div class="vis vis-doc"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="asset">
+        <p class="no">03</p>
+        <h3>나에게 맞는<br>일하는 방식</h3>
+        <p class="d">우선 시도할 방향 2~3개</p>
+        <div class="chips"><span>프로젝트</span><span>원격근무</span><span>계약</span></div>
+      </div>
+      <div class="asset">
+        <p class="no">04</p>
+        <h3>실제 시장에<br>나를 제안한 경험</h3>
+        <p class="d">실행 기록과 개선점</p>
+        <div class="chips"><span>기회 찾기</span><span>제안하기</span><span>점검하기</span></div>
+      </div>
+      <div class="asset road">
+        <div>
+          <p class="no">05</p>
+          <h3>스스로 이어갈<br>90일 실행 로드맵</h3>
+          <p class="d">다음 행동의 우선순위</p>
+        </div>
+        <div class="days">
+          <div class="day"><strong>30</strong><span>DAYS</span></div>
+          <div class="day"><strong>60</strong><span>DAYS</span></div>
+          <div class="day"><strong>90</strong><span>DAYS</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="sec dark">
+  <div class="in">
+    <p class="eyebrow"><span class="num">07</span>THE 6 WEEK JOURNEY</p>
+    <h2 class="title">내 경력이<br><span class="m">다음 일로 이어지도록</span></h2>
+    <figure class="photo r-16-9 photo-s05">
+      <img src="../images/s05-session.jpg" alt="온라인 컨설팅 세션 장면" loading="lazy">
+      <div class="photo-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-5.5-5.5L6 19"/></svg><b>PHOTO</b><span>온라인 컨설팅 세션 장면<br>16:9 · 1200×675 권장</span></div>
+    </figure>
+    <ol class="steps">
+      <li><span class="n">00</span><span class="tx"><span class="t">사전 설문<span class="wk pre-tag">시작 전</span></span><span class="d">해온 일·잘하는 것·원하는 삶을 먼저 정리해요</span></span></li>
+      <li><span class="n">01</span><span class="tx"><span class="t">내 강점 찾기<span class="wk">그룹</span></span><span class="d">회사 밖에서도 통할 강점과 서비스 후보가 정해져요</span></span></li>
+      <li><span class="n">02</span><span class="tx"><span class="t">수익화 방향 정하기<span class="wk">그룹</span></span><span class="d">프리랜서·원격근무·계약 중 나에게 맞는 루트 2~3개가 정해져요</span></span></li>
+      <li><span class="n">03</span><span class="tx"><span class="t">실제 기회 찾기<span class="wk">그룹</span></span><span class="d">지원·제안할 곳과 고르는 기준이 생겨요</span></span></li>
+      <li class="one"><span class="n">04</span><span class="tx"><span class="t">포트폴리오·지원서 점검<span class="wk">1:1 60분</span></span><span class="d">고른 곳에 맞춘 포트폴리오와 지원서가 준비돼요</span></span></li>
+      <li><span class="n">05</span><span class="tx"><span class="t">지원·제안 실행<span class="wk">그룹</span></span><span class="d">직접 지원·제안하고, 서로의 반응에서 고칠 점을 찾아요</span></span></li>
+      <li><span class="n">06</span><span class="tx"><span class="t">90일 계획 세우기<span class="wk">그룹</span></span><span class="d">혼자서도 계속 지원할 기준과 90일 계획이 생겨요</span></span></li>
+    </ol>
+    <div class="doing">
+      <p class="doing-title">실제로 해보는 6주</p>
+      <p>생각만 정리하고 끝내지 않아요.<br>같이 기회를 찾고, 보여줄 것을 정리하고,<br>실제 지원·제안까지 직접 실행해봅니다.</p>
+      <p><b>숫자를 채우는 것보다 중요한 건,</b><br>6주가 끝난 뒤에도 혼자 기회를 찾고 이어갈 수 있는 기준을 만드는 거예요.</p>
+    </div>
+    <div class="week">
+      <p class="doing-title">한 주는 이렇게 흘러가요</p>
+      <p>과제와 코멘트가 먼저 오가기 때문에,<br>60분 세션은 설명보다 피드백에 집중해요.</p>
+      <div class="wflow">
+        <div class="wf"><span>세션 하루 전까지</span><b>과제 제출</b></div>
+        <div class="wf"><span>세션 전</span><b>전원 서면 코멘트</b></div>
+        <div class="wf main"><span>월요일 저녁 8시</span><b>60분 그룹 세션</b></div>
+        <div class="wf"><span>주중</span><b>실행 · 단톡방 질문</b></div>
+      </div>
+      <div class="wtime">
+        <div class="wtime-head">60분 세션 구성<span>MON 20:00 KST</span></div>
+        <div class="wbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="wrow"><b>10분</b><span>지난주 실행 공유 · 이번 주 목표</span></div>
+        <div class="wrow"><b>20분</b><span>이번 주 핵심 내용 · 꽃디 실제 사례</span></div>
+        <div class="wrow key"><b>25분</b><span>참여자 과제 피드백</span></div>
+        <div class="wrow"><b>5분</b><span>다음 과제 안내</span></div>
+      </div>
+    </div>
+    <div class="how">
+      <div><b>그룹 + 1:1</b><span>4주차는 꽃디와 1:1 60분</span></div>
+      <div><b>3~6명</b><span>한 기수에 6명까지만 함께해요</span></div>
+      <div><b>녹화본 제공</b><span>빠진 회차는 녹화본으로 이어가요</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="sec after">
+  <div class="in">
+    <p class="eyebrow"><span class="num">08</span>혼자 이어갈 다음 걸음까지</p>
+    <h2 class="title">6주가 끝나도<br>내 이름으로 이어가도록</h2>
+    <div class="after-card">
+      <div class="ic vod">VOD</div>
+      <div class="tx"><h3>개인 브랜딩 SNS VOD</h3><p>프로필·콘텐츠 방향 + 실전 자료</p></div>
+    </div>
+    <div class="after-card">
+      <div class="ic rec">REC</div>
+      <div class="tx"><h3>그룹 세션 녹화본</h3><p>수료 후 30일까지 다시 보기</p></div>
+    </div>
+    <div class="after-card">
+      <div class="ic"><svg viewBox="0 0 36 20" aria-hidden="true"><path d="M3 10 H33 M10.5 2.5 L3 10 L10.5 17.5 M25.5 2.5 L33 10 L25.5 17.5" fill="none" stroke="#304bff" stroke-width="4.2"/></svg></div>
+      <div class="tx"><h3>졸업생 전용 커뮤니티</h3><p>정보·기회 공유 네트워크</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="sec gray">
+  <div class="in">
+    <p class="eyebrow"><span class="num">09</span>함께 점검하는 사람 꽃디</p>
+    <h2 class="title">회사 안팎<br><span class="b">둘 다 해본 꽃디와</span></h2>
+    <p class="lead">16년 디자인 경력. 11년 프리랜서 경험.</p>
+    <figure class="photo r-16-9 photo-s06">
+      <img src="../images/s06-kkotdi.jpg" alt="해외에서 노트북으로 일하는 꽃디" loading="lazy">
+      <div class="photo-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-5.5-5.5L6 19"/></svg><b>PHOTO</b><span>꽃디 프로필 사진 · 작업 중인 모습<br>16:9 · 1200×675 권장</span></div>
+    </figure>
+    <div class="profile">
+      <p class="name">꽃디</p>
+      <p class="handle">@design.kkot · 디자이너 / 컨설턴트</p>
+      <div class="stamp" aria-hidden="true"><div>REAL<br>EXPERIENCE</div></div>
+      <div class="row">
+        <span class="from">회사에서 디자인</span>
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7 H12 M7.5 2.5 L12 7 L7.5 11.5" fill="none" stroke="#11131b" stroke-width="2.2"/></svg>
+        <span class="to">내 이름으로 프로젝트</span>
+      </div>
+      <p class="profile-note">회사 안에서 일하는 방식과 회사 밖에서 직접 일을 만드는 과정을 모두 겪었고,<br>지금도 해외를 오가며 일하고 있어요.<br><b>그래서 회사에서 쌓은 경력을 회사 밖의 일로 옮길 때,<br>무엇부터 바꿔야 하는지 함께 짚어드려요.</b></p>
+    </div>
+    <div class="voices">
+      <div class="voice">
+        <blockquote>“모호했던 프리랜서 방법을<br><span class="hl-full">구체적으로 알려주셨어요.</span>”</blockquote>
+        <p>실제로 해갈 수 있는 방법을 알려주셔서 유용했어요.</p>
+        <small>디자인 회사 재직 · 가족과 해외생활 준비 중</small>
+      </div>
+      <div class="voice">
+        <blockquote>“제 상황에 맞는 접근을<br><span class="hl-full">구체적으로 짚어주셨어요.</span>”</blockquote>
+        <p>지금 시도할 것부터 장기적인 조건까지 정리했어요.</p>
+        <small>독립출판 작가 · 해외생활 준비 중</small>
+      </div>
+      <div class="voice">
+        <blockquote>“컨설팅이 끝난 뒤에도<br><span class="hl-full">계속 방향을 잡아주셨어요.</span>”</blockquote>
+        <p>궁금한 부분을 함께 이야기하며 꾸준히 도와주셨어요.</p>
+        <small>음악 전공 · 발리 2달살기 중</small>
+      </div>
+    </div>
+    <p class="voices-note">기존 1:1 컨설팅 참여자의 후기를 요약했어요. 이번 그룹 프로그램의 성과 후기는 아닙니다.</p>
+  </div>
+</section>
+
+<!-- 10 일정 -->
+<section class="sec">
+  <div class="in">
+    <p class="eyebrow"><span class="num">10</span>1기 일정 안내</p>
+    <h2 class="title">1기는<br><span class="b">11월 2일에 시작해요</span></h2>
+    <dl class="info">
+      <div class="info-row"><dt>신청 마감</dt><dd class="b">10월 25일(일)</dd></div>
+      <div class="info-row"><dt>기간</dt><dd>11월 2일 ~ 12월 7일 · 6주</dd></div>
+      <div class="info-row"><dt>그룹 세션</dt><dd>매주 월요일 저녁 8시(한국시간) · 온라인 60분<small>세션 녹화본은 다음 날까지 기수 단톡방에 올려드려요</small></dd></div>
+      <div class="info-row"><dt>1:1 세션</dt><dd>4주차(11월 23일 주간) · 60분<small>주중에 개인 일정에 맞춰 시간을 정해요</small></dd></div>
+      <div class="info-row"><dt>인원</dt><dd>최소 3명 ~ 최대 6명</dd></div>
+    </dl>
+    <div class="dates">
+      <div class="date"><small>1주</small><strong>11/2</strong><span>그룹</span></div>
+      <div class="date"><small>2주</small><strong>11/9</strong><span>그룹</span></div>
+      <div class="date"><small>3주</small><strong>11/16</strong><span>그룹</span></div>
+      <div class="date one"><small>4주</small><strong>11/23~</strong><span>1:1</span></div>
+      <div class="date"><small>5주</small><strong>11/30</strong><span>그룹</span></div>
+      <div class="date"><small>6주</small><strong>12/7</strong><span>그룹</span></div>
+    </div>
+    <div class="apply">
+      <p class="sub-head">신청부터 첫 세션까지</p>
+      <ol class="apply-steps">
+        <li><span class="c">1</span><div><strong>사전 신청서 작성</strong><span class="d">신청서에서 ‘그룹 컨설팅’을 선택해 주세요. 결제는 아직 아니에요.</span></div></li>
+        <li><span class="c">2</span><div><strong>10월 25일(일) 사전 신청 마감</strong><span class="d">한 기수에 6명까지만 받아요.</span></div></li>
+        <li><span class="c">3</span><div><strong>10월 26일(월) 개강 확정 · 결제 안내</strong><span class="d">3명 이상 모이면 개강이 확정되고, 카카오톡으로 결제 안내를 드려요.</span></div></li>
+        <li><span class="c">4</span><div><strong>단톡방 입장 · 사전 설문</strong><span class="d">결제가 확인되면 기수 단톡방에 초대해 드려요.</span></div></li>
+        <li class="go"><span class="c">5</span><div><strong>11월 2일(월) 저녁 8시 첫 세션</strong><span class="d">같은 고민의 디자이너들과 6주를 시작해요.</span></div></li>
+      </ol>
+      <p class="next-note">그룹 컨설팅은 홀수달마다 열려요. <b>2기는 2027년 1월 4일(월)</b>에 시작해요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 가격 -->
+<section class="sec price-sec" id="price">
+  <div class="in">
+    <p class="eyebrow"><span class="num">11</span>꽃디 6주 그룹 디자이너 커리어 컨설팅</p>
+    <h2 class="title">다음 일은<br><span class="b">내 이름으로</span></h2>
+    <p class="price-lead">혼자 알아보다 멈추는 대신,<br>6주 동안 같은 고민의 디자이너들과 함께 찾고 실행해요.</p>
+    <div class="price-card" id="apply">
+      <div class="price-head"><strong>1기 오픈 특별가</strong><span>기수당 최대 6명</span></div>
+      <p class="price-was"><s>390,000원</s></p>
+      <div class="price"><strong>290,000</strong><span>원</span></div>
+      <p class="price-desc">6주 그룹 컨설팅 · 2기(1월)부터 390,000원</p>
+      <ul class="includes">
+        <li>사전 설문 · 커리어 방향 정리</li>
+        <li>그룹 세션 5회 (월요일 저녁 8시 · 60분)</li>
+        <li>4주차 1:1 포트폴리오·지원서 점검 (60분)</li>
+        <li>매주 과제 서면 코멘트</li>
+        <li>실제 구직·지원·제안 실전</li>
+        <li>30·60·90일 실행 로드맵</li>
+        <li>그룹 세션 녹화본 · 기수 단톡방</li>
+        <li>개인 브랜딩 &amp; SNS VOD · 졸업생 커뮤니티</li>
+      </ul>
+      <a class="btn btn-blue" href="https://forms.gle/MSFfUvHtD1qecEVn9" target="_blank" rel="noopener">그룹 1기 사전 신청하기
+        <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>
+      </a>
+      <p class="card-note">결제는 개강이 확정된 뒤에 안내드려요.</p>
+    </div>
+    <p class="after-note">지금 퇴사를 결정하지 않아도 괜찮아요.</p>
+    <a class="alt-card" href="../1on1/">
+      <div><p class="k">내 상황만 깊게 보고 싶다면</p><h3>6주 1:1 컨설팅</h3><p>최대 3명 · 890,000원 · 30일 사후 서면 피드백 포함</p></div>
+      <span class="go">1:1 보기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></span>
+    </a>
+    <div class="notfit">
+      <p class="sub-head">이런 분께는 맞지 않을 수 있어요</p>
+      <ul>
+        <li>일자리나 프로젝트를 대신 구해주길 원하는 분</li>
+        <li>포트폴리오·지원서를 대신 만들어주길 원하는 분</li>
+        <li>합격·계약·수입 같은 결과를 보장받고 싶은 분</li>
+        <li>직접 지원하고 실행할 시간을 내기 어려운 분</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 12 FAQ -->
+<section class="sec faq">
+  <div class="in">
+    <p class="eyebrow"><span class="num">12</span>신청 전 꼭 알아주세요</p>
+    <h2 class="title">신청 전<br>이것만은 확인하세요</h2>
+    <div class="faq-list">
+      <details open>
+        <summary>그룹이면 제 상황은 제대로 봐주지 못하지 않나요?<span class="pm"></span></summary>
+        <p>매주 과제를 미리 받아, 세션 전에 한 분씩 서면 코멘트를 드립니다. 세션에서는 그 코멘트를 바탕으로 피드백에 집중하고, 4주차에는 꽃디와 60분 동안 1:1로 포트폴리오와 지원서를 봅니다. 함께 배우면서도 내 상황에 맞는 답을 가져갈 수 있습니다.</p>
+      </details>
+      <details open>
+        <summary>1:1 컨설팅과 무엇이 다른가요?<span class="pm"></span></summary>
+        <p>1:1은 6주 내내 내 상황만 깊게 다루고, 그룹은 같은 고민의 디자이너들과 함께 배우면서 결정적인 4주차에 1:1로 짚어드립니다. 30일 사후 서면 피드백은 1:1 컨설팅에만 포함됩니다. 고르기 어렵다면 신청서에서 ‘아직 모르겠어요’를 선택해 주세요. 지금 상황에 맞는 쪽을 함께 정해드립니다.</p>
+      </details>
+      <details>
+        <summary>60분이면 짧지 않나요?<span class="pm"></span></summary>
+        <p>세션 전에 과제와 서면 코멘트가 먼저 오가기 때문에, 60분은 설명보다 피드백과 다음 행동을 정하는 데 씁니다. 세션이 끝난 뒤에도 단톡방에서 질문을 이어갈 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>다른 분들 앞에서 포트폴리오를 보여주기 부담돼요.<span class="pm"></span></summary>
+        <p>공유할 범위는 직접 정하시면 됩니다. 회사 프로젝트나 개인적인 고민처럼 여럿 앞에서 꺼내기 어려운 이야기는 4주차 1:1에서 편하게 다룹니다. 다른 분의 사례를 함께 보는 것만으로도 내 포트폴리오를 고칠 힌트를 많이 얻게 됩니다.</p>
+      </details>
+      <details>
+        <summary>6주 안에 돈을 벌 수 있나요?<span class="pm"></span></summary>
+        <p>6주 동안 방향만 정리하고 끝나지 않습니다. 내 경력에 맞는 실제 기회를 찾고, 시장에 맞게 다듬은 포트폴리오와 제안 방식으로 직접 지원·제안을 시작합니다. 반응을 보면서 계속 고쳐가기 때문에, 6주가 끝나면 내 경력으로 어디에, 어떻게 지원하고 제안해야 하는지 알고 바로 움직일 수 있게 됩니다. 계약이나 수익으로 이어지는 시점은 사람마다 다를 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>회사를 다니면서도 할 수 있나요?<span class="pm"></span></summary>
+        <p>네, 지금 회사를 다니면서 시작하면 됩니다. 세션은 월요일 저녁 8시에 열리고, 세션 외에는 일주일에 3~4시간 정도 과제와 실행 시간을 잡아두시면 됩니다. 퇴사나 해외 이주 같은 큰 결정은 가능성을 확인한 뒤에 내려도 충분합니다.</p>
+      </details>
+      <details>
+        <summary>세션에 빠지면 어떻게 되나요?<span class="pm"></span></summary>
+        <p>모든 그룹 세션은 녹화해 다음 날까지 기수 단톡방에 올려드립니다. 녹화본을 보고 과제를 내시면 서면 코멘트도 똑같이 받을 수 있어 흐름이 끊기지 않습니다. 녹화본은 수료 후 30일까지 다시 볼 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>인원이 다 모이지 않으면 어떻게 되나요?<span class="pm"></span></summary>
+        <p>3명 이상 모이면 개강이 확정되고, 결제는 그때 안내드립니다. 인원이 모이지 않으면 결제 없이 다음 기수에 우선 자리를 드리고, 1기 오픈 특별가도 그대로 유지됩니다. 바로 시작하고 싶다면 1:1 컨설팅도 안내해 드립니다.</p>
+      </details>
+      <details>
+        <summary>경력이 많지 않거나 프리랜서 경험이 없어도 괜찮나요?<span class="pm"></span></summary>
+        <p>괜찮습니다. 연차보다 중요한 건 지금까지 해온 일과 잘하는 것입니다. 회사에서 맡았던 일 안에서도 회사 밖에서 통할 강점을 함께 찾습니다. 프리랜서가 유일한 답도 아니라서, 나에게 맞는 방식부터 시작하면 됩니다.</p>
+      </details>
+      <details>
+        <summary>환불은 어떻게 되나요?<span class="pm"></span></summary>
+        <p>1회차 세션 전에는 100% 환불되니 부담 없이 시작하셔도 됩니다. 1회차 진행 후에는 50% 환불되며, 이후에는 환불이 어렵습니다.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 마지막 CTA -->
+<section class="sec mint">
+  <div class="in">
+    <p class="eyebrow">YOUR NEXT CHAPTER</p>
+    <h2 class="title">일하는 곳도<br>방식도 내 선택으로</h2>
+    <p class="final-sub">혼자 알아보던 시간은 여기까지.<br>이번엔 같이 지원까지 가요.</p>
+    <figure class="photo r-16-9 photo-final">
+      <img src="../images/final-lifestyle.jpg" alt="원하는 곳에서 일하는 라이프스타일" loading="lazy">
+      <div class="photo-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 16l-5.5-5.5L6 19"/></svg><b>PHOTO</b><span>원하는 곳에서 일하는 라이프스타일 컷<br>16:9 · 1200×675 권장</span></div>
+    </figure>
+    <a class="btn btn-dark" href="https://forms.gle/MSFfUvHtD1qecEVn9" target="_blank" rel="noopener">그룹 1기 사전 신청하기
+      <svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>
+    </a>
+    <p class="final-date">1기 사전 신청 마감 10월 25일(일) · 11월 2일 시작</p>
+    <p class="sign">꽃디 · @design.kkot</p>
+  </div>
+</section>
+
+</body>
+</html>
