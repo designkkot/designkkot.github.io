@@ -637,6 +637,32 @@
   .fine, .final-date { color: #11131b; }
   .sec.mint .photo-ph svg, .sec.mint .photo-ph span, .sec.mint .photo-ph b { color: rgba(17, 19, 27, 0.55); }
   .hero .pill { background: var(--mint); border-color: var(--mint); color: var(--dark); }
+
+/* 이런 분께 맞아요: 2x2 → 한 줄씩 (1열 4행) 강조 */
+.fit-grid { grid-template-columns: 1fr; gap: 10px; grid-auto-rows: auto; }
+.fit-card { padding: 20px 24px 21px; }
+.fit-card b { font-size: clamp(15.5px, 3.2vw, 17.5px); line-height: 24px; }
+.fit-card span { margin-top: 5px; font-size: clamp(14.5px, 2.9vw, 16px); line-height: 23px; }
+@media (max-width: 560px) { .fit-grid { gap: 8px; } .fit-card { padding: 17px 18px 18px; } }
+
+/* 1:1 vs 그룹 비교표: 그룹 칸 강조, 1:1 칸 축소 */
+.plan .plan-row { grid-template-columns: 92px 0.8fr 1.25fr; }
+.plan .plan-row > div:nth-child(2) { font-size: clamp(12.5px, 2.5vw, 14px); line-height: 20px; color: #8a8f9c; font-weight: 400; }
+.plan .plan-row > div:last-child { font-size: clamp(15px, 3.1vw, 17.5px); line-height: 24px; }
+.plan .plan-row.head > div:nth-child(2) { font-size: clamp(14px, 2.9vw, 16px); line-height: 20px; color: #8a8f9c; font-weight: 800; }
+.plan .plan-row.head > div:last-child { font-size: clamp(18px, 4vw, 23px); line-height: 28px; }
+.plan .plan-row.head > div:nth-child(2) small { font-size: 11px; }
+.plan .plan-row.price-row > div:last-child { font-size: clamp(16px, 3.4vw, 19px); }
+@media (max-width: 560px) { .plan .plan-row { grid-template-columns: 70px 0.8fr 1.25fr; } }
+
+/* 다른 상품 연결 카드: 현재 페이지 상품보다 작게 */
+.alt-card { margin-top: 22px; padding: 16px 20px; border-radius: 18px; gap: 12px; }
+.alt-card .k { font-size: 12px; line-height: 16px; }
+.alt-card h3 { margin-top: 3px; font-size: clamp(15px, 3vw, 16.5px); line-height: 22px; }
+.alt-card p { margin-top: 2px; font-size: clamp(12.5px, 2.5vw, 13.5px); line-height: 19px; }
+.alt-card .go { height: 32px; padding: 0 12px; border-radius: 16px; font-size: 13px; }
+.alt-card .go svg { width: 9px; height: 9px; margin-left: 6px; }
+@media (max-width: 560px) { .alt-card { flex-direction: row; align-items: center; padding: 14px 16px; border-radius: 16px; gap: 10px; } }
 </style>
 </head>
 <body>
@@ -754,7 +780,7 @@
       <div class="plan-row head"><div></div><div><small>1:1</small>혼자 깊게</div><div><small>GROUP</small>함께 실행</div></div>
       <div class="plan-row"><div>이런 분</div><div>내 상황만 깊게 보고 싶은 분</div><div>함께 배우며 페이스를 잡고 싶은 분</div></div>
       <div class="plan-row"><div>진행</div><div>6주 내내 1:1</div><div>그룹 5회 + 4주차 1:1</div></div>
-      <div class="plan-row"><div>인원</div><div>최대 3명</div><div>기수당 3~6명</div></div>
+      <div class="plan-row"><div>인원</div><div>최대 3명</div><div>소그룹</div></div>
       <div class="plan-row"><div>사전 진단</div><div>커리어·포트폴리오 개별 분석</div><div>사전 설문</div></div>
       <div class="plan-row"><div>6주간 피드백</div><div>1:1 카톡</div><div>기수 단톡방 + 과제 서면 코멘트</div></div>
       <div class="plan-row"><div>사후 피드백</div><div>30일 서면 피드백</div><div><span class="off">1:1 전용</span></div></div>
@@ -905,7 +931,7 @@
     </div>
     <div class="how">
       <div><b>그룹 + 1:1</b><span>4주차는 꽃디와 1:1 60분</span></div>
-      <div><b>3~6명</b><span>한 기수에 6명까지만 함께해요</span></div>
+      <div><b>소그룹</b><span>소수 인원이 같은 단계를 함께 밟아요</span></div>
       <div><b>녹화본 제공</b><span>빠진 회차는 녹화본으로 이어가요</span></div>
     </div>
   </div>
@@ -983,7 +1009,7 @@
       <div class="info-row"><dt>기간</dt><dd>11월 2일 ~ 12월 7일 · 6주</dd></div>
       <div class="info-row"><dt>그룹 세션</dt><dd>매주 월요일 저녁 8시(한국시간) · 온라인 60분<small>세션 녹화본은 다음 날까지 기수 단톡방에 올려드려요</small></dd></div>
       <div class="info-row"><dt>1:1 세션</dt><dd>4주차(11월 23일 주간) · 60분<small>주중에 개인 일정에 맞춰 시간을 정해요</small></dd></div>
-      <div class="info-row"><dt>인원</dt><dd>최소 3명 ~ 최대 6명</dd></div>
+      <div class="info-row"><dt>인원</dt><dd>소그룹</dd></div>
     </dl>
     <div class="dates">
       <div class="date"><small>1주</small><strong>11/2</strong><span>그룹</span></div>
@@ -997,7 +1023,7 @@
       <p class="sub-head">신청부터 첫 세션까지</p>
       <ol class="apply-steps">
         <li><span class="c">1</span><div><strong>사전 신청서 작성</strong><span class="d">신청서에서 ‘그룹 컨설팅’을 선택해 주세요. 결제는 아직 아니에요.</span></div></li>
-        <li><span class="c">2</span><div><strong>10월 25일(일) 사전 신청 마감</strong><span class="d">한 기수에 6명까지만 받아요.</span></div></li>
+        <li><span class="c">2</span><div><strong>10월 25일(일) 사전 신청 마감</strong><span class="d">신청서를 확인한 뒤 카카오톡으로 연락드려요.</span></div></li>
         <li><span class="c">3</span><div><strong>10월 26일(월) 개강 확정 · 결제 안내</strong><span class="d">3명 이상 모이면 개강이 확정되고, 카카오톡으로 결제 안내를 드려요.</span></div></li>
         <li><span class="c">4</span><div><strong>단톡방 입장 · 사전 설문</strong><span class="d">결제가 확인되면 기수 단톡방에 초대해 드려요.</span></div></li>
         <li class="go"><span class="c">5</span><div><strong>11월 2일(월) 저녁 8시 첫 세션</strong><span class="d">같은 고민의 디자이너들과 6주를 시작해요.</span></div></li>
@@ -1014,7 +1040,7 @@
     <h2 class="title">다음 일은<br><span class="b">내 이름으로</span></h2>
     <p class="price-lead">혼자 알아보다 멈추는 대신,<br>6주 동안 같은 고민의 디자이너들과 함께 찾고 실행해요.</p>
     <div class="price-card" id="apply">
-      <div class="price-head"><strong>1기 오픈 특별가</strong><span>기수당 최대 6명</span></div>
+      <div class="price-head"><strong>1기 오픈 특별가</strong><span>소그룹 진행</span></div>
       <p class="price-was"><s>390,000원</s></p>
       <div class="price"><strong>290,000</strong><span>원</span></div>
       <p class="price-desc">6주 그룹 컨설팅 · 2기(1월)부터 390,000원</p>
