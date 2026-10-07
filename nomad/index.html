@@ -649,6 +649,19 @@
 .fit-card b { font-size: clamp(15.5px, 3.2vw, 17.5px); line-height: 24px; }
 .fit-card span { margin-top: 5px; font-size: clamp(14.5px, 2.9vw, 16px); line-height: 23px; }
 @media (max-width: 560px) { .fit-grid { gap: 8px; } .fit-card { padding: 17px 18px 18px; } }
+
+/* 2026-10-07 mentor update: reframe cards, criteria, before-after */
+.compare.reframe .cmp-title { white-space: normal; }
+.compare.reframe li { height: 78px; line-height: 1.42; word-break: keep-all; }
+.criteria { margin-top: 20px; padding: 18px 20px; border-radius: 18px; background: #f5f6f9; text-align: left; }
+.criteria p { font-size: clamp(14px, 2.55vw, 15px); line-height: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.04em; }
+.criteria ol { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: c; }
+.criteria li { counter-increment: c; position: relative; padding-left: 26px; margin-top: 6px; font-size: clamp(14px, 2.55vw, 15px); line-height: 23px; color: #4b5060; letter-spacing: -0.04em; word-break: keep-all; }
+.criteria li::before { content: counter(c); position: absolute; left: 0; top: 2px; width: 19px; height: 19px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 11px; font-weight: 800; line-height: 19px; text-align: center; }
+.ba-line { margin: -14px 0 36px; font-size: clamp(15px, 3.4vw, 19px); line-height: 1.6; color: var(--gray); letter-spacing: -0.05em; word-break: keep-all; }
+.ba-line b { color: var(--ink); font-weight: 800; }
+@media (max-width: 560px) { .compare.reframe li { height: 96px; } .ba-line { margin: -6px 0 28px; } }
+@media (max-width: 340px) { .compare.reframe li { height: auto; min-height: 52px; padding: 12px 0; } }
 </style>
 </head>
 <body>
@@ -727,16 +740,16 @@
     <p class="eyebrow"><span class="num">02</span>남의 브이로그가 아닌 내 계획</p>
     <h2 class="title">좋아 보이는 삶 말고<br><span class="b">내가 시작할 수 있는 길</span></h2>
     <p class="lead">디지털노마드 이야기는 넘치지만,<br>지금 내 직업과 상황으로 무엇부터 할지는 알려주지 않아요.</p>
-    <div class="compare">
+    <div class="compare reframe">
       <div class="cmp">
-        <p class="cmp-label">남의 이야기</p>
-        <p class="cmp-title">좋아 보이는 삶</p>
-        <ul><li>브이로그 구경</li><li>도시 순위 검색</li></ul>
+        <p class="cmp-label">이렇게 생각했다면</p>
+        <p class="cmp-title">안 될 것 같은 이유</p>
+        <ul><li>특별한 기술이 없어요</li><li>영어를 잘 못해요</li><li>이제 와서 늦은 것 같아요</li></ul>
       </div>
       <div class="cmp me">
-        <p class="cmp-label">내 상황에서 출발</p>
-        <p class="cmp-title">내가 해볼 수 있는 일</p>
-        <ul><li>지금 일로 가능한 방식</li><li>이번 달에 할 첫 단계</li></ul>
+        <p class="cmp-label">이렇게 볼 수 있어요</p>
+        <p class="cmp-title">가능한 이유</p>
+        <ul><li>지금 하는 일 중에 원격으로 옮길 수 있는 부분이 있어요</li><li>한국 고객과 일하면서 해외에 머무는 방법도 있어요</li><li>경력이 쌓인 지금이 오히려 고를 수 있는 게 많아요</li></ul>
       </div>
     </div>
     <div class="fit">
@@ -906,7 +919,7 @@
       </a>
       <p class="card-note">신청서를 남겨주시면 카카오톡으로 일정을 정해드려요.</p>
     </div>
-    <p class="after-note">지금 퇴사나 출국을 결정하지 않아도 괜찮아요.</p>
+    <p class="after-note">지금 퇴사나 출국을 결정하지 않아도 괜찮아요.<br>아직 망설여진다면, 3분 자가진단부터 해보세요 → <a href="https://ig.me/m/design.kkot" target="_blank" rel="noopener" style="color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px">인스타 DM '진단'</a></p>
     <a class="alt-card" href="../#services">
       <div><p class="k">디자이너시라면</p><h3>디자이너 전용 6주 과정</h3><p>1:1 컨설팅 · 그룹 컨설팅으로 실제 지원까지 함께해요</p></div>
       <span class="go">보러 가기<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L12.5 3.5 M5 3 H13 V11" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></span>

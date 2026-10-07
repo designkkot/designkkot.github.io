@@ -663,6 +663,19 @@
 .alt-card .go { height: 32px; padding: 0 12px; border-radius: 16px; font-size: 13px; }
 .alt-card .go svg { width: 9px; height: 9px; margin-left: 6px; }
 @media (max-width: 560px) { .alt-card { flex-direction: row; align-items: center; padding: 14px 16px; border-radius: 16px; gap: 10px; } }
+
+/* 2026-10-07 mentor update: reframe cards, criteria, before-after */
+.compare.reframe .cmp-title { white-space: normal; }
+.compare.reframe li { height: 78px; line-height: 1.42; word-break: keep-all; }
+.criteria { margin-top: 20px; padding: 18px 20px; border-radius: 18px; background: #f5f6f9; text-align: left; }
+.criteria p { font-size: clamp(14px, 2.55vw, 15px); line-height: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.04em; }
+.criteria ol { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: c; }
+.criteria li { counter-increment: c; position: relative; padding-left: 26px; margin-top: 6px; font-size: clamp(14px, 2.55vw, 15px); line-height: 23px; color: #4b5060; letter-spacing: -0.04em; word-break: keep-all; }
+.criteria li::before { content: counter(c); position: absolute; left: 0; top: 2px; width: 19px; height: 19px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 11px; font-weight: 800; line-height: 19px; text-align: center; }
+.ba-line { margin: -14px 0 36px; font-size: clamp(15px, 3.4vw, 19px); line-height: 1.6; color: var(--gray); letter-spacing: -0.05em; word-break: keep-all; }
+.ba-line b { color: var(--ink); font-weight: 800; }
+@media (max-width: 560px) { .compare.reframe li { height: 96px; } .ba-line { margin: -6px 0 28px; } }
+@media (max-width: 340px) { .compare.reframe li { height: auto; min-height: 52px; padding: 12px 0; } }
 </style>
 </head>
 <body>
@@ -746,16 +759,16 @@
     <p class="eyebrow"><span class="num">02</span>퇴사 권유가 아닌 가능성 확인</p>
     <h2 class="title">남의 퇴사 이야기 말고<br><span class="b">내 경력으로 가능한 길</span></h2>
     <p class="lead">인터넷에는 방법이 넘치지만,<br>지금 내 경력으로 무엇부터 할지는 알려주지 않아요.</p>
-    <div class="compare">
+    <div class="compare reframe">
       <div class="cmp">
-        <p class="cmp-label">남의 이야기</p>
-        <p class="cmp-title">좋아 보이는 방법</p>
-        <ul><li>노마드 도시 검색</li><li>성공 사례만 저장</li></ul>
+        <p class="cmp-label">이렇게 생각했다면</p>
+        <p class="cmp-title">내 경력의 약점</p>
+        <ul><li>한 회사에서만 오래 일했어요</li><li>회사 이름 없인 보여줄 게 없어요</li><li>프리랜서 경험이 없어요</li></ul>
       </div>
       <div class="cmp me">
-        <p class="cmp-label">내 경력에서 출발</p>
-        <p class="cmp-title">내가 해볼 수 있는 일</p>
-        <ul><li>내 강점에 맞는 방향</li><li>직접 제안할 기회</li></ul>
+        <p class="cmp-label">이렇게 볼 수 있어요</p>
+        <p class="cmp-title">회사 밖에서의 강점</p>
+        <ul><li>한 분야를 깊게 아는 사람이에요</li><li>회사에서 풀어본 문제가 포트폴리오예요</li><li>팀장·다른 부서와 일한 게 이미 클라이언트 경험이에요</li></ul>
       </div>
     </div>
     <div class="fit">
@@ -841,6 +854,7 @@
   <div class="in">
     <p class="eyebrow"><span class="num">06</span>6주 뒤 손에 남는 것</p>
     <h2 class="title">하고 싶은 일을 향한<br><span class="b">나만의 준비물</span></h2>
+    <p class="ba-line">6주 전: 알아보기만 몇 달째<br><b>→ 6주 후: 어디에 어떻게 제안할지 알고, 이미 시장에 나를 보내본 상태</b></p>
     <div class="assets">
       <div class="asset">
         <p class="no">01</p>
@@ -977,6 +991,7 @@
         <span class="to">내 이름으로 프로젝트</span>
       </div>
       <p class="profile-note">회사 안에서 일하는 방식과 회사 밖에서 직접 일을 만드는 과정을 모두 겪었고,<br>지금도 해외를 오가며 일하고 있어요.<br><b>그래서 회사에서 쌓은 경력을 회사 밖의 일로 옮길 때,<br>무엇부터 바꿔야 하는지 함께 짚어드려요.</b></p>
+      <div class="criteria"><p>상담에서 제가 가장 먼저 보는 건 세 가지예요.</p><ol><li>지금까지 돈을 받고 해본 일</li><li>지금 수입을 끊지 않고 시도할 수 있는 범위</li><li>원격을 반기는 고객이 있는 시장</li></ol></div>
     </div>
     <div class="voices">
       <div class="voice">
